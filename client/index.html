@@ -4,15 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/index.css">
-    <script src="./assets/index.js" defer></script>
-    <title>rampant goat page</title>
+    <title>Flashcard display page</title>
+    <script href="./assets/index.js" defer></script>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
 </head>
 <body>
- <!-- Hamburger menu -->
+    <h1 class="title">Rampant Goats</h1>
     <!-- Navbar section start -->
+    <nav class="navbar">
+        <div class="navbar-items">
+            <button href="#">Home</button>
+            <button href="#">Subjects</button>
+            <button href="#">Help</button>
+            <button href="#">Account</button>
+        </div>
+        <!-- Hamburger menu -->
+        <div class="menu-button">&#9776;</div>
+
+        <!-- Hamburger menu container-->
+        <div class="menu">
+            <button href="#">Home</button>
+            <button href="#">Subjects</button>
+            <button href="#">About</button>
+            <button href="#">Contact</button>
+      </div>
+    </nav>
     <!-- Navbar section end -->
+
     <!-- Flashcard start -->
+    <div class="flashcard">
+        <form class="flashcard-form">
+            <label class="flashcard-name">1.a In which year did the second world war start?</label><br>
+            <input type="radio" name="answer" value=""> 1938<br>
+            <input type="radio" name="answer" value=""> 1940<br>
+            <input type="radio" name="answer" value=""> 1939<br>
+            <input type="radio" name="answer" value=""> 1941<br>
+          </form>
+        <button id="submit-button">Submit</button>
+        <button id="next-button">Next</button>
+        <button id="previous-button">Previous</button>
+    </div>
     <!-- Flashcard end -->
 </body>
 </html>
