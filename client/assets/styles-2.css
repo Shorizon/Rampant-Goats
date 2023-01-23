@@ -71,28 +71,14 @@ body {
     display: block;
     margin: auto 10px auto 10px;
   }
-  
-  /* Specific navbar items*/
 
-  /* Media query to show the hamburger menu on small screens */
-  @media screen and (max-width: 720px) {
-    /* Hide regular navbar links */
-    .navbar button {
-      display: none;
-    }
-  
-    /* Show hamburger menu button */
-    .navbar .menu-button {
-      display: block;
-    }
-  
-    /* Show menu on hover */
-    .navbar .menu-button:hover + .menu,
-    .navbar .menu-button:focus + .menu {
-      display: block;
-    }
-  }
+
 /*//////////////////////// NAVBAR CSS END //////////////////////////////*/
+
+
+
+
+
 
 /*//////////////////////// FLASHCARD CSS START //////////////////////////////*/
 .flashcard {
@@ -194,3 +180,30 @@ input[type="radio"] {
     border-color: rgb(200, 200, 200);
 }
 /*//////////////////////// FLASHCARD CSS END //////////////////////////////*/
+
+
+
+
+
+/*//////////////////////// MEDIA QUERIES CSS START //////////////////////////////*/
+
+  /* Media query to show the hamburger menu on small screens */
+  @media screen and (max-width: 720px) {
+    /* Hide regular navbar links */
+    .navbar button {
+      display: none;
+    }
+  
+    /* Show hamburger menu button */
+    .navbar .menu-button {
+      display: block;
+    }
+  
+    /* Show menu on hover */
+    .navbar .menu-button:hover + .menu,
+    .navbar .menu-button:focus + .menu {
+      display: block;
+    }
+  }
+
+  /*//////////////////////// MEDIA QUERIES CSS END //////////////////////////////*/
