@@ -30,6 +30,23 @@ app.get('/flashcard/:category', (req, res) => {
     }
 })
 
+app.post("/flashcard", (req, res) => {
+    const newFlashcard = req.body;
+    const missingField = ["content", "answer1","answer2","answer3","answer4","corAnswer","category"].some(fc => !Object.hasOwn(newFlashcard, fc));
+
+    if (missingField) {
+        res.status(400).json({
+            "error": "your flashcard is missing something!"
+        })
+    } else {
+        flashcard.push(newFlashcard);
+        res.status(201).json(newFlashcard);
+    }
+})
+
+
+
+
 
 
 module.exports = app;
