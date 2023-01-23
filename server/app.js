@@ -45,8 +45,4 @@ app.post("/flashcard", (req, res) => {
 })
 
 
-
-
-
-
 module.exports = app;
