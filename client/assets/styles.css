@@ -29,7 +29,7 @@ body {
     text-align: left;
     text-transform: capitalize;
     letter-spacing: 0.5rem;
-    text-shadow: 0.5rem 0.5rem 0.5rem #000;
+    text-shadow: 0.3rem 0.3rem 0.3rem #000;
 }
 
   
@@ -95,10 +95,11 @@ body {
 /*//////////////////////// NAVBAR CSS END //////////////////////////////*/
 
 /*//////////////////////// FLASHCARD CSS START //////////////////////////////*/
-.card {
+.flashcard {
     width: 30rem;
     margin: 70px auto 0 auto;
     border-radius: 28px;
+    position: relative;
     text-align: center;
     background-color: #FFC93C;
     padding: 4rem;
@@ -108,11 +109,88 @@ body {
     box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card-name {
+.flashcard-form {
+    margin: 0 0;
+}
+
+.flashcard-name {
     font-size: 25px;
     font-weight: 650;
     letter-spacing: 0.1rem;
     color: #111;
-    margin: 0 0 2rem 0;
+}
+
+/*///// Added css for spacing inside flashcard container ///*/
+label.flashcard-name {
+    display: block;
+    width: 100%;
+}
+
+input[type="radio"] {
+    margin-top: 10px;
+}
+/*///// Added css for spacing inside flashcard container ///*/
+
+#submit-button {
+    border-radius: 28px;
+    border: none;
+    font-family: Nunito, sans-serif;
+    font-weight: 650;
+    color: #000000;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 40px 0;
+}
+
+#submit-button:hover {
+    background-color: rgb(200, 200, 200);
+    border-color: rgb(200, 200, 200);
+}
+
+#next-button {
+    border-radius: 28px;
+    border: none;
+    font-family: Nunito, sans-serif;
+    font-weight: 650;
+    color: #000000;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+#next-button:hover {
+    background-color: rgb(200, 200, 200);
+    border-color: rgb(200, 200, 200);
+}
+
+#previous-button {
+    border-radius: 28px;
+    border: none;
+    font-family: Nunito, sans-serif;
+    font-weight: 650;
+    color: #000000;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+#previous-button:hover {
+    background-color: rgb(200, 200, 200);
+    border-color: rgb(200, 200, 200);
 }
 /*//////////////////////// FLASHCARD CSS END //////////////////////////////*/
