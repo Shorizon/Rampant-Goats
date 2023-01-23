@@ -1,8 +1,8 @@
 
 
-var next = 0;
-var fLength = 0;
-
+let next = 0;
+let fLength ;
+let sub ;
 
 async function displayFlashcard(next, category) {
   const res = await fetch(`http://localhost:3000/flashcard/${category}`);
@@ -25,26 +25,16 @@ async function displayFlashcard(next, category) {
 
 const showButtons = Array.from(document.getElementsByClassName("sub-button"));
 
+
+
 showButtons.forEach(e => {
-  let sub = e.addEventListener('click', (f) => {
+ e.addEventListener('click', (f) => {
     sub = f.target.id
   })
   e.addEventListener('click', function () { displayFlashcard(next, sub) })
 
-  document.getElementById("next-button").onclick = function () {
-
-    if (next < fLength - 1) {
-      displayFlashcard((next = next + 1), sub)
-    }
-    else {
-      console.log("there are no more flashcards left!!!")
-    }
   
-  
-  };
 })
-
-
 
 
 document.getElementById("next-button").onclick = function () {
