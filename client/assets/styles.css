@@ -1,27 +1,46 @@
 h1 {
     font-size: 100px;
 }
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #0081C9;
+}
 /*//////////////////////// NAVBAR CSS START //////////////////////////////*
-/* The navbar container */
+/* navbar container */
 .navbar {
     display: flex;
-    align-items: center;
-    background-color: #333;
+    justify-content: flex-end; /* horizontal */
+    align-items: center; /* vertical */
+    background-color: #0081C9;
     color: #fff;
     padding: 20px;
-  }
+}
+
   
-  /* The navbar links */
+  /* navbar buttons */
   .navbar button {
-    color: #333;
-    border-radius: 20%;
-    outline: none;
+    border-radius: 28px;
+    border: none;
+    font-family: Arial;
+    color: #000000;
+    font-size: 20px;
+    background: #ffffff;
+    padding: 10px 20px 10px 20px;
     text-decoration: none;
-    font-size: 18px;
-    margin: auto 10px auto 10px;;
+    cursor: pointer;
+    margin: auto 10px auto 10px;
+  }
+
+  /* Navbar hover effect */
+  .navbar button:hover {
+    background-color: rgb(200, 200, 200);
+    border-color: rgb(200, 200, 200);
   }
   
-  /* The hamburger menu button */
+  /* hamburger menu button */
   .navbar .menu-button {
     display: none;
     cursor: pointer;
@@ -39,19 +58,21 @@ h1 {
     margin: auto 10px auto 10px;
   }
   
+  /* Specific navbar items*/
+
   /* Media query to show the hamburger menu on small screens */
   @media screen and (max-width: 720px) {
-    /* Hide the regular navbar links */
+    /* Hide regular navbar links */
     .navbar button {
       display: none;
     }
   
-    /* Show the hamburger menu button */
+    /* Show hamburger menu button */
     .navbar .menu-button {
       display: block;
     }
   
-    /* When the hamburger menu button is hovered over, show the menu */
+    /* Show menu on hover */
     .navbar .menu-button:hover + .menu,
     .navbar .menu-button:focus + .menu {
       display: block;
