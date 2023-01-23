@@ -17,6 +17,10 @@ app.get('/flashcard', (req, res) => {
     res.json(flashcard);
 })
 
+app.get('/quotes/random', (req, res) => {
+    res.json(flashcard[Math.floor(Math.random() * flashcard.length)]);
+})
+
 app.get('/flashcard/:category', (req, res) => {
     const category = req.params["category"];
     const filtered = flashcard.filter(q => q["category"] == category);
