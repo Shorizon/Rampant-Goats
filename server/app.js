@@ -17,8 +17,10 @@ app.get('/flashcard', (req, res) => {
     res.json(flashcard);
 })
 
-app.get('/quotes/random', (req, res) => {
+app.get('/flashcard/random', (req, res) => {
+   
     res.json(flashcard[Math.floor(Math.random() * flashcard.length)]);
+    
 })
 
 app.get('/flashcard/:category', (req, res) => {
