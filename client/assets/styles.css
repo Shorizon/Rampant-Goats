@@ -12,12 +12,13 @@ h1 {
   }
   
   /* The navbar links */
-  .navbar a {
-    color: #fff;
+  .navbar button {
+    color: #333;
+    border-radius: 20%;
+    outline: none;
     text-decoration: none;
     font-size: 18px;
     margin: auto 10px auto 10px;;
-    float: left;
   }
   
   /* The hamburger menu button */
@@ -33,7 +34,7 @@ h1 {
   }
   
   /* Hamburger menu links */
-  .navbar .menu a {
+  .navbar .menu button {
     display: block;
     margin: auto 10px auto 10px;
   }
@@ -41,7 +42,7 @@ h1 {
   /* Media query to show the hamburger menu on small screens */
   @media screen and (max-width: 720px) {
     /* Hide the regular navbar links */
-    .navbar a {
+    .navbar button {
       display: none;
     }
   
