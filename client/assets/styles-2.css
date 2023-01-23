@@ -183,6 +183,30 @@ input[type="radio"] {
 
 
 
+/*//////////////////////// PROGRESS BAR CSS START //////////////////////////////*/
+
+#progress {
+  width: 25%;
+  height: 10px;
+  border-radius: 28px;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 60px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #FFC93C;
+  border-radius: 28px;
+}
+
+/*//////////////////////// PROGRESS BAR CSS END //////////////////////////////*/
+
+
+
 
 
 /*//////////////////////// MEDIA QUERIES CSS START //////////////////////////////*/
