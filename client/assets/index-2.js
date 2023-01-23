@@ -1,4 +1,13 @@
 
+const menu = document.querySelector('.menu');
+
+
+function openMenu() {
+  menu.classList.toggle('open');
+}
+
+
+
 async function displayFlashcard() {
     const res = await fetch("http://localhost:3000/flashcard");
     const flashcard = await res.json();

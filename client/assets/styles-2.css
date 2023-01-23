@@ -232,10 +232,12 @@ progress::-webkit-progress-value {
       display: block;
     }
   
-    /* Show menu on hover */
+    /* Show menu on hover, commented out over preferential button click event
     .navbar .menu-button:hover + .menu,
     .navbar .menu-button:focus + .menu {
       display: block;
-    }
+    } */
+
+
   }
   /*//////////////////////// MEDIA QUERIES CSS END //////////////////////////////*/
