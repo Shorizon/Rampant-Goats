@@ -1,0 +1,63 @@
+h1 {
+    font-size: 100px;
+}
+/*//////////////////////// NAVBAR CSS START //////////////////////////////*
+/* The navbar container */
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  /* The navbar links */
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    margin: auto 10px auto 10px;;
+    float: left;
+  }
+  
+  /* The hamburger menu button */
+  .navbar .menu-button {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  /* Hamburger menu container */
+  .navbar .menu {
+    display: none;
+  }
+  
+  /* Hamburger menu links */
+  .navbar .menu a {
+    display: block;
+    margin: auto 10px auto 10px;
+  }
+  
+  /* Media query to show the hamburger menu on small screens */
+  @media screen and (max-width: 720px) {
+    /* Hide the regular navbar links */
+    .navbar a {
+      display: none;
+    }
+  
+    /* Show the hamburger menu button */
+    .navbar .menu-button {
+      display: block;
+    }
+  
+    /* When the hamburger menu button is hovered over, show the menu */
+    .navbar .menu-button:hover + .menu,
+    .navbar .menu-button:focus + .menu {
+      display: block;
+    }
+  }
+/*//////////////////////// NAVBAR CSS END //////////////////////////////*
+
+
+
+  
