@@ -46,6 +46,17 @@ document.getElementById("next-button").onclick = function () {
     console.log("there are no more flashcards left!!!")
   }
 
+};
+
+document.getElementById("previous-button").onclick = function () {
+
+  if (next > 0) {
+    displayFlashcard((next = next - 1), sub)
+  }
+  else {
+    console.log("there are no more flashcards left!!!")
+  }
+
 
 };
 
