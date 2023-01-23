@@ -34,7 +34,7 @@ body {
 
   
   /* navbar buttons */
-  .navbar button {
+  button {
     border-radius: 28px;
     border: none;
     font-family: Nunito, sans-serif;
@@ -49,7 +49,7 @@ body {
   }
 
   /* Navbar hover effect */
-  .navbar button:hover {
+  button:hover {
     background-color: rgb(200, 200, 200);
     border-color: rgb(200, 200, 200);
   }
@@ -92,8 +92,27 @@ body {
       display: block;
     }
   }
-/*//////////////////////// NAVBAR CSS END //////////////////////////////*
+/*//////////////////////// NAVBAR CSS END //////////////////////////////*/
 
+/*//////////////////////// FLASHCARD CSS START //////////////////////////////*/
+.card {
+    width: 30rem;
+    margin: 70px auto 0 auto;
+    border-radius: 28px;
+    text-align: center;
+    background-color: #FFC93C;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.2);
+}
 
-
-  
+.card-name {
+    font-size: 25px;
+    font-weight: 650;
+    letter-spacing: 0.1rem;
+    color: #111;
+    margin: 0 0 2rem 0;
+}
+/*//////////////////////// FLASHCARD CSS END //////////////////////////////*/
