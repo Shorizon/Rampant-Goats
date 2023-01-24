@@ -1,5 +1,4 @@
 
-
 // // //////// Hamburger menu on click event to pull out sidebar animation START /////////////
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
@@ -32,6 +31,9 @@ let fLength;
 let sub;
 let arr = [];
 let data = undefined;
+let total;
+let current;
+
 
 const queryParams = new URLSearchParams(window.location.search);
 const cat = queryParams.get("category")
@@ -39,15 +41,16 @@ const cat = queryParams.get("category")
 async function displayFlashcard(next, category) {
   const res = await fetch(`http://localhost:3000/flashcard/${category}`);
   const flashcard = await res.json();
-  console.log(flashcard)
-  fLength = flashcard.length
-  console.log(fLength)
+  fLength = flashcard.length;
+
+  const counter = document.querySelector('#counter');
   const contentElement = document.querySelector("#content");
   const answer1Element = document.querySelector("#answer1");
   const answer2Element = document.querySelector("#answer2");
   const answer3Element = document.querySelector("#answer3");
   const answer4Element = document.querySelector("#answer4");
 
+  counter.textContent = (`question ${next+1}/${fLength}`);
   contentElement.textContent = flashcard[next]["content"];
   answer1Element.textContent = flashcard[next]["answer1"];
   answer2Element.textContent = flashcard[next]["answer2"];
