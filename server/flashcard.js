@@ -37,7 +37,25 @@ const flashcard = [{
     answer4 : "Sweden",
     corAnswer : "Sweden",
     category : "History"
+},{
+
+    content : "notshown",
+    answer1 : "Afganistan",
+    answer2 : "Finland",
+    answer3 : "Poland",
+    answer4 : "Sweden",
+    corAnswer : "Sweden",
+    category : "Arts"
     
+},{
+
+    content : "hello",
+    answer1 : "Afganistan",
+    answer2 : "Finland",
+    answer3 : "Poland",
+    answer4 : "Sweden",
+    corAnswer : "Sweden",
+    category : "Arts"
 }
 ];
 
