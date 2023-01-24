@@ -11,30 +11,35 @@
 </head>
 
 <body>
-    <form id="upload">
-        <label for="file">File to upload</label>
-        <input type="file" id="file" accept=".json">
-
-        <button>Upload</button>
-    </form>
+    <input type="file" id="selectFiles" value="Import" /><br />
+    <button id="import">Import</button>
+    <textarea id="result"></textarea>
 
     <script>
-
-        let form = document.querySelector('#upload');
-        let file = document.querySelector('#file');
-        form.addEventListener('submit', checkSubmission);
-
-        function checkSubmission(event) {
-            event.preventDefault();
-            if (!file.value.length) return;
+        let arr = [];
+        document.getElementById('import').onclick = function () {
+            let files = document.getElementById('selectFiles').files;
+            console.log(files);
+            if (!files.length)
+                return false;
             let scanner = new FileReader();
-            scanner.onload = (e) => {
-                let str = e.target.result;
-                let json = JSON.parse(str);
-                console.log('json', json);
+
+            scanner.onload = function (e) {
+                let result = JSON.parse(e.target.result);
+                for (let key in result) {
+                    for (let key2 in key) {
+                        let data = result[key][key2]
+                        if( data != undefined) 
+                        arr.push(data)
+                    }
+
+                }   
+                console.log(arr)
             }
-            scanner.readAsText(file.files[0]);
-        }
+            scanner.readAsText(files.item(0));
+        };
+
+
 
     </script>
 </body>
