@@ -3,10 +3,10 @@
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
 })
-// //////// Hamburger menu on click event to pull out sidebar animation END /////////////
+/////////// Hamburger menu on click event to pull out sidebar animation END /////////////
 
 
-//////// Switch color button functionality START /////////////
+//////// Switch color button functionality START ///////////////
 const switchColorBtn = document.querySelector("#switch-color")
 const body = document.querySelector("body")
 const flashcard = document.querySelector(".flashcard")
