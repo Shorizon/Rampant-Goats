@@ -58,6 +58,19 @@ showButtons.forEach(e => {
 })
 //////// View flashcards in categories END /////////////
 
+//////// Submit button revels back of flashcard /////////////
+
+
+const card = document.getElementById("flashcard")
+const subButton = document.getElementById("submit-button")
+subButton.addEventListener("click", flipCard)
+
+
+function flipCard(){
+    card.classList.toggle("flip")
+}
+//////// Submit button revels back of flashcard /////////////
+
 
 //////// Go to the nextprevious flashcard START /////////////
 document.getElementById("next-button").onclick = function () {
