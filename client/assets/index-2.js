@@ -78,7 +78,7 @@ nextButton.addEventListener('click' , function () {
   else {
     console.log("there are no more flashcards left!!!")
   }
-
+//
 });
 
 document.getElementById("previous-button").onclick = function () {
