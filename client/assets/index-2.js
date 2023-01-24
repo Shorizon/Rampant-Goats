@@ -33,6 +33,9 @@ let sub;
 let arr = [];
 let data = undefined;
 
+const queryParams = new URLSearchParams(window.location.search);
+const cat = queryParams.get("category")
+
 async function displayFlashcard(next, category) {
   const res = await fetch(`http://localhost:3000/flashcard/${category}`);
   const flashcard = await res.json();
@@ -51,34 +54,37 @@ async function displayFlashcard(next, category) {
   answer3Element.textContent = flashcard[next]["answer3"];
   answer4Element.textContent = flashcard[next]["answer4"];
 }
+displayFlashcard(next,cat)
 
-const showButtons = Array.from(document.getElementsByClassName("sub-button"));
 
-showButtons.forEach(e => {
-  e.addEventListener('click', (f) => {
-    sub = f.target.id
-  })
-  e.addEventListener('click', function () { displayFlashcard(next, sub) })
-})
+// const showButtons = Array.from(document.getElementsByClassName("sub-button"));
+
+// showButtons.forEach(e => {
+//   e.addEventListener('click', (f) => {
+//     sub = f.target.id
+//   })
+//   e.addEventListener('click', function () { displayFlashcard(next, sub) })
+// })
 //////// View flashcards in categories END /////////////
 
 
 //////// Go to the nextprevious flashcard START /////////////
-document.getElementById("next-button").onclick = function () {
+const nextButton = document.getElementById("next-button")
+nextButton.addEventListener('click' , function () {
 
   if (next < fLength - 1) {
-    displayFlashcard((next = next + 1), sub)
+    displayFlashcard((next = next + 1), "History")
   }
   else {
     console.log("there are no more flashcards left!!!")
   }
 
-};
+});
 
 document.getElementById("previous-button").onclick = function () {
 
   if (next > 0) {
-    displayFlashcard((next = next - 1), sub)
+    displayFlashcard((next = next - 1), "History")
   }
   else {
     console.log("you are already at the starting flashcard!")
