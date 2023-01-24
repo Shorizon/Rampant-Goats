@@ -1,0 +1,282 @@
+h1 {
+  font-size: 100px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: Nunito, sans-serif;
+  background-color: #0081C9;
+}
+/*//////////////////////// NAVBAR CSS START //////////////////////////////*
+/* navbar container */
+.navbar {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+  color: #fff;
+  padding: 30px;
+}
+
+/* Used to be the old title but switched to icon now */
+/* .title {
+  font-size: 35px;
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  left: 30px;
+  text-align: left;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+} */
+
+#title-img {
+width: 45%;
+height: 18%;
+position: absolute;
+left: 30px;
+}
+
+
+/* navbar buttons */
+button {
+  border-radius: 28px;
+  border: none;
+  font-family: Nunito, sans-serif;
+  font-weight: 650;
+  color: #000000;
+  font-size: 20px;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: auto 10px auto 10px;
+}
+
+/* Navbar hover effect */
+button:hover {
+  background-color: rgb(200, 200, 200);
+  border-color: rgb(200, 200, 200);
+}
+
+
+/*//////////////////////// NAVBAR CSS END //////////////////////////////*/
+
+
+
+/*//////////////////////// HAMBURGER CSS START //////////////////////////////*/
+
+.container {
+display: none;
+}
+
+.hamburger-menu {
+width: 2rem;
+height: 2rem;
+position: fixed;
+top: 2rem;
+right: 5rem;
+z-index: 200;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+cursor: pointer;
+}
+
+.line {
+width: 100%;
+height: 0.2rem;
+background-color: white;
+box-shadow: 0.1rem 0.2rem rgba(0,0,0,0.2);
+}
+
+.sidebar {
+width: 15rem;
+height: 100vh;
+position: fixed;
+top: 0;
+right: -40rem;
+background-color: white;
+transition: right 0.5s;
+z-index: 1;
+}
+
+.change .sidebar {
+right: 0;
+}
+
+.menu {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+list-style: none;
+}
+
+.menu-item {
+text-align: center;
+}
+
+.menu-link {
+font-family: Nunito, sans-serif;
+font-size: 1.5rem;
+color: black;
+}
+/*//////////////////////// HAMBURGER CSS END //////////////////////////////*/
+
+
+/*//////////////////////// FLASHCARD CSS START //////////////////////////////*/
+.flashcard {
+  width: 30rem;
+  margin: 70px auto 0 auto;
+  border-radius: 28px;
+  position: relative;
+  text-align: center;
+  background-color: #FFC93C;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.2);
+}
+
+.flashcard-form {
+  margin: 0 0;
+}
+
+.flashcard-name {
+  font-size: 25px;
+  font-weight: 650;
+  letter-spacing: 0.1rem;
+  color: #111;
+}
+
+/*///// Added css for spacing inside flashcard container ///*/
+label.flashcard-name {
+  display: block;
+  width: 100%;
+}
+
+input[type="radio"] {
+  margin-top: 10px;
+}
+/*///// Added css for spacing inside flashcard container ///*/
+
+#submit-button {
+  border-radius: 28px;
+  border: none;
+  font-family: Nunito, sans-serif;
+  font-weight: 650;
+  color: #000000;
+  font-size: 20px;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 40px 0;
+}
+
+#submit-button:hover {
+  background-color: rgb(200, 200, 200);
+  border-color: rgb(200, 200, 200);
+}
+
+#next-button {
+  border-radius: 28px;
+  border: none;
+  font-family: Nunito, sans-serif;
+  font-weight: 650;
+  color: #000000;
+  font-size: 20px;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+#next-button:hover {
+  background-color: rgb(200, 200, 200);
+  border-color: rgb(200, 200, 200);
+}
+
+#previous-button {
+  border-radius: 28px;
+  border: none;
+  font-family: Nunito, sans-serif;
+  font-weight: 650;
+  color: #000000;
+  font-size: 20px;
+  background: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+#previous-button:hover {
+  background-color: rgb(200, 200, 200);
+  border-color: rgb(200, 200, 200);
+}
+/*//////////////////////// FLASHCARD CSS END //////////////////////////////*/
+
+
+
+/*//////////////////////// PROGRESS BAR CSS START //////////////////////////////*/
+#progress {
+width: 25%;
+height: 10px;
+border-radius: 28px;
+}
+
+.progress-bar {
+display: flex;
+justify-content: center;
+justify-items: center;
+margin-top: 60px;
+}
+
+progress::-webkit-progress-value {
+background-color: #FFC93C;
+border-radius: 28px;
+}
+/*//////////////////////// PROGRESS BAR CSS END //////////////////////////////*/
+
+
+
+
+
+/*//////////////////////// MEDIA QUERIES CSS START //////////////////////////////*/
+/* Media query to show the hamburger menu on small screens */
+@media screen and (max-width: 720px) {
+  /* Hide regular navbar links */
+  .navbar button {
+    display: none;
+  }
+
+  #title-img {
+    display: none;
+  }
+
+  /* Show hamburger menu button */
+  .container {
+    display: block;
+  }
+
+  /* Show menu on hover, commented out over preferential button click event
+  .navbar .menu-button:hover + .menu,
+  .navbar .menu-button:focus + .menu {
+    display: block;
+  } */
+
+
+}
+/*//////////////////////// MEDIA QUERIES CSS END //////////////////////////////*/
