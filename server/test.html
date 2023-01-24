@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/app.js" defer></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form id="upload">
+        <label for="file">File to upload</label>
+        <input type="file" id="file" accept=".json">
+
+        <button>Upload</button>
+    </form>
+
+    <script>
+
+        let form = document.querySelector('#upload');
+        let file = document.querySelector('#file');
+        form.addEventListener('submit', checkSubmission);
+
+        function checkSubmission(event) {
+            event.preventDefault();
+            if (!file.value.length) return;
+            let scanner = new FileReader();
+            scanner.onload = (e) => {
+                let str = e.target.result;
+                let json = JSON.parse(str);
+                console.log('json', json);
+            }
+            scanner.readAsText(file.files[0]);
+        }
+
+    </script>
+</body>
+
+</html>
