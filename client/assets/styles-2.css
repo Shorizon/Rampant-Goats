@@ -128,15 +128,13 @@ color: black;
 
 
 /*//////////////////////// FLASHCARD CSS START //////////////////////////////*/
-.maincontainer{
-  width: 480px;
+.main-container {
+    width: 480px;
     margin: 70px auto 0 auto;
     background-color: none;
     padding: 4rem;
     display: flex;
     perspective: 1000px;
-   
-    
 }
 
 .flashcard {
