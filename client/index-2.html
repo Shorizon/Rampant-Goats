@@ -59,23 +59,24 @@
 
     <!-- Flashcard start -->
 
-    <section class ="maincontainer" >
+    <section class ="main-container">
         <div class="flashcard" id ="flashcard">
             <div class = "front">
                 <form class="flashcard-form">
                     <label class="flashcard-name" id = "content"></label><br>
-                    <input type="radio" name="answer1"  id = "answer1"><label id = "answer1"></label> <br>
-                    <input type="radio" name="answer2"  id = "answer2"> <br>
-                    <input type="radio" name="answer3" id = "answer3"> <br>
-                    <input type="radio" name="answer4"  id = "answer4"> <br>
+                    
+                    <input type="radio" name="answer" ><label id="answer1">Change this text</label><br>
+                    <input type="radio" name="answer"><label id="answer2">Change this text</label><br>
+                    <input type="radio" name="answer"><label id="answer3">Change this text</label> <br>
+                    <input type="radio" name="answer"><label id="answer4">Change this text</label><br>
                 </form>
                 <button id="submit-button">Submit</button>
-                <button id="next-button">Next</button>
-                <button id="previous-button">Previous</button>
+                <button class="next-button">Next</button>
+                <button class="previous-button">Previous</button>
             </div>
             <div class = "back">
-                <label class="flashcard-name"></label><br>
-                <label class="corAnswer"></label><br>
+                <label class="flashcard-name" id = "backContent"></label><br>
+                <label class="corAnswer" id = "corAnswer"></label><br>
                 <button id="next-button">Next</button>
                 <button id="previous-button">Previous</button>
             </div>

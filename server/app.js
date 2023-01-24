@@ -1,20 +1,27 @@
 const express = require('express');
 const cors = require('cors');
 const logger = require("./logger");
-const flashcard = require('./flashcard');
 const app = express();
+const flashcard = require("./flashcard")
 
 app.use(cors());
 app.use(express.json())
 app.use(logger);
 
+const noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i) 
+
+
+
 app.get("/", (req, res) => {
-    res.send(`Welcome to the rampant-goats API! There are ${flashcard.length} available.`);
+    res.send(noDuplicates);
 })
 
 
 app.get('/flashcard', (req, res) => {
-    res.json(flashcard);
+    
+    res.json(flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i));
+    console.log(flashcard)
+    
 })
 
 app.get('/flashcard/random', (req, res) => {
@@ -25,7 +32,7 @@ app.get('/flashcard/random', (req, res) => {
 
 app.get('/flashcard/:category', (req, res) => {
     const category = req.params["category"];
-    const filtered = flashcard.filter(q => q["category"] == category);
+    const filtered = noDuplicates.filter(q => q["category"] == category);
 
     if (filtered) {
         res.json(filtered);
