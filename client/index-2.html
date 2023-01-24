@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcard display page</title>
-    <script href="./assets/index.js" defer></script>
-    <link rel="stylesheet" href="./assets/styles.css">
+    <script href="./assets/index-2.js" defer></script>
+    <link rel="stylesheet" href="./assets/styles-2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="title">Rampant Goats</h1>
+    <img id="title-img" src="./images/logo.png"></img>
     <!-- Navbar section start -->
     <nav class="navbar">
         <div class="navbar-items">
@@ -26,7 +26,7 @@
 
         <!-- Hamburger menu container-->
         <div class="menu">
-            <button href="#">Home</button>
+            <button href="#" onclick="openMenu()">Home</button>
             <button href="#">Subjects</button>
             <button href="#">About</button>
             <button href="#">Contact</button>
@@ -48,5 +48,10 @@
         <button id="previous-button">Previous</button>
     </div>
     <!-- Flashcard end -->
+    <!-- Progress bar start-->
+    <div class="progress-bar">
+        <progress id="progress" value="75" max="100"></progress>
+    </div>
+    <!-- Progress bar end-->
 </body>
 </html>

@@ -20,7 +20,8 @@ body {
     padding: 30px;
 }
 
-.title {
+/* Used to be the old title but switched to icon now */
+/* .title {
     font-size: 35px;
     font-weight: 900;
     color: #fff;
@@ -30,6 +31,13 @@ body {
     text-transform: capitalize;
     letter-spacing: 0.5rem;
     text-shadow: 0.3rem 0.3rem 0.3rem #000;
+} */
+
+#title-img {
+  width: 50%;
+  height: 18%;
+  position: absolute;
+  left: 30px;
 }
 
   
@@ -71,28 +79,14 @@ body {
     display: block;
     margin: auto 10px auto 10px;
   }
-  
-  /* Specific navbar items*/
 
-  /* Media query to show the hamburger menu on small screens */
-  @media screen and (max-width: 720px) {
-    /* Hide regular navbar links */
-    .navbar button {
-      display: none;
-    }
-  
-    /* Show hamburger menu button */
-    .navbar .menu-button {
-      display: block;
-    }
-  
-    /* Show menu on hover */
-    .navbar .menu-button:hover + .menu,
-    .navbar .menu-button:focus + .menu {
-      display: block;
-    }
-  }
+
 /*//////////////////////// NAVBAR CSS END //////////////////////////////*/
+
+
+
+
+
 
 /*//////////////////////// FLASHCARD CSS START //////////////////////////////*/
 .flashcard {
@@ -194,3 +188,56 @@ input[type="radio"] {
     border-color: rgb(200, 200, 200);
 }
 /*//////////////////////// FLASHCARD CSS END //////////////////////////////*/
+
+
+
+/*//////////////////////// PROGRESS BAR CSS START //////////////////////////////*/
+#progress {
+  width: 25%;
+  height: 10px;
+  border-radius: 28px;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 60px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #FFC93C;
+  border-radius: 28px;
+}
+/*//////////////////////// PROGRESS BAR CSS END //////////////////////////////*/
+
+
+
+
+
+/*//////////////////////// MEDIA QUERIES CSS START //////////////////////////////*/
+  /* Media query to show the hamburger menu on small screens */
+  @media screen and (max-width: 720px) {
+    /* Hide regular navbar links */
+    .navbar button {
+      display: none;
+    }
+
+    #title-img {
+      display: none;
+    }
+  
+    /* Show hamburger menu button */
+    .navbar .menu-button {
+      display: block;
+    }
+  
+    /* Show menu on hover, commented out over preferential button click event
+    .navbar .menu-button:hover + .menu,
+    .navbar .menu-button:focus + .menu {
+      display: block;
+    } */
+
+
+  }
+  /*//////////////////////// MEDIA QUERIES CSS END //////////////////////////////*/
