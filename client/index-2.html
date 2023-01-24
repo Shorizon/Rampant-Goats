@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcard display page</title>
-    <script href="./assets/index-2.js" defer></script>
+    <script src="./assets/index-2.js" defer></script>
     <link rel="stylesheet" href="./assets/styles-2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,23 +16,46 @@
     <!-- Navbar section start -->
     <nav class="navbar">
         <div class="navbar-items">
-            <button href="#">Home</button>
-            <button href="#">Subjects</button>
-            <button href="#">Help</button>
-            <button href="#">Account</button>
+            <button>Home</button>
+            <button>Subjects</button>
+            <button id="switch-color">Switch Color</button>
+            <button>Help</button>
+            <button>Account</button>
         </div>
-        <!-- Hamburger menu -->
-        <div class="menu-button">&#9776;</div>
-
-        <!-- Hamburger menu container-->
-        <div class="menu">
-            <button href="#" onclick="openMenu()">Home</button>
-            <button href="#">Subjects</button>
-            <button href="#">About</button>
-            <button href="#">Contact</button>
-      </div>
     </nav>
     <!-- Navbar section end -->
+
+    <!-- Hamburger menu start -->
+    <div class="container">
+        <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+    <!-- Hamburger menu end -->
+
+    <!-- Sidebar start -->
+    <section class="sidebar">
+        <ul class="menu">
+            <li class="menu-item">
+                <button class="menu-link">Home</button>
+            </li><br>
+            <li class="menu-item">
+                <button class="menu-link">Subjects</button>
+            </li><br>
+            <li class="menu-item">
+                <button class="menu-link">Switch Color</button>
+            </li><br>
+            <li class="menu-item">
+                <button class="menu-link">Help</button>
+            </li><br>
+            <li class="menu-item">
+                <button class="menu-link">Account</button>
+            </li>
+        </ul>
+    </section>
+    </div>
+    <!-- Sidebar end -->
 
     <!-- Flashcard start -->
     <div class="flashcard">
