@@ -1,0 +1,50 @@
+body{
+    height: 100vh;
+    display: flex;
+    background-color: white;
+}
+
+.maincontainer {
+    width: 400px;
+   
+
+    height: 400px;
+    background: none;
+    margin: auto;
+    display: flex;
+    /* transform: translate(-50%, -50%);
+    border-color: black; */
+
+}
+.flashCard{
+position: relative;
+width: 100%;
+height: 100%;
+/* transform-style: preserve-3d;
+transition: all 0.8s ease; */
+}
+
+.front{
+    position: absolute;
+    width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background: rgb(231, 231, 1);
+color: black;
+text-align: center;
+}
+
+.back{
+    position: absolute;
+    width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background-color: aqua;
+color: blue;
+text-align: center;
+/* transform: rotateY(180deg); */
+}
+
+/* .flip{
+    transform: rotateY(180deg);
+} */

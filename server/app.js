@@ -17,12 +17,18 @@ app.get('/flashcard', (req, res) => {
     res.json(flashcard);
 })
 
+app.get('/flashcard/random', (req, res) => {
+   
+    res.json(flashcard[Math.floor(Math.random() * flashcard.length)]);
+    
+})
+
 app.get('/flashcard/:category', (req, res) => {
     const category = req.params["category"];
     const filtered = flashcard.filter(q => q["category"] == category);
 
-    if (flashcard) {
-        res.json(flashcard);
+    if (filtered) {
+        res.json(filtered);
     } else {
         res.status(404).json({
             error: "There is no flashcard with such category"
