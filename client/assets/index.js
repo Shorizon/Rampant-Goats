@@ -1,4 +1,11 @@
+const card = document.getElementById("flashcard")
+const subButton = document.getElementById("submit-button")
+subButton.addEventListener("click", flipCard)
+// card.addEventListener("click", flipCard)
 
+function flipCard(){
+    card.classList.toggle("flip")
+}
 
 let next = 0;
 let fLength ;
@@ -21,6 +28,8 @@ async function displayFlashcard(next, category) {
   answer3Element.textContent = flashcard[next]["answer3"];
   answer4Element.textContent = flashcard[next]["answer4"];
 }
+
+
 
 
 const showButtons = Array.from(document.getElementsByClassName("sub-button"));

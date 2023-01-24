@@ -95,9 +95,23 @@ body {
 /*//////////////////////// NAVBAR CSS END //////////////////////////////*/
 
 /*//////////////////////// FLASHCARD CSS START //////////////////////////////*/
-.flashcard {
-    width: 30rem;
+.maincontainer{
+  width: 480px;
     margin: 70px auto 0 auto;
+    
+   
+    
+    background-color: none;
+    padding: 4rem;
+    display: flex;
+    perspective: 1000px;
+   
+    
+}
+
+.flashcard {
+    width: 100%;
+    min-height: 300px;
     border-radius: 28px;
     position: relative;
     text-align: center;
@@ -107,6 +121,38 @@ body {
     flex-direction: column;
     align-items: center;
     box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.2);
+    transform:scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ;
+}
+
+.flashcard:active{
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.front{
+  position: absolute;
+  width: 100%;
+height: 100%;
+backface-visibility: hidden;
+
+text-align: center;
+
+}
+
+.back{
+  position: absolute;
+  width: 100%;
+height: 100%;
+backface-visibility: hidden;
+transform: rotateY(180deg);
+text-align: center;
+
+}
+
+.flashcard.flip{
+  transform: rotateY(180deg);
 }
 
 .flashcard-form {
@@ -164,7 +210,7 @@ input[type="radio"] {
     margin: 0px;
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 80px;
 }
 
 #next-button:hover {
@@ -185,8 +231,8 @@ input[type="radio"] {
     cursor: pointer;
     margin: 0px;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+   top: 300px;
+    right: 340px; 
 }
 
 #previous-button:hover {
