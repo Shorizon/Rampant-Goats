@@ -32,8 +32,6 @@ showButtons.forEach(e => {
     sub = f.target.id
   })
   e.addEventListener('click', function () { displayFlashcard(next, sub) })
-
-  
 })
 
 
