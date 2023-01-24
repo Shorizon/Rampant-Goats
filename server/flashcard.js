@@ -66,6 +66,45 @@ const flashcard = [{
     category : "Arts"
 },{
 
+<<<<<<< HEAD
+    content : "Which of these countries did the Soviet Union NEVER invade?",
+    answer1 : "Afganistan",
+    answer2 : "Finland",
+    answer3 : "Poland",
+    answer4 : "Sweden",
+    corAnswer : "Sweden",
+    category : "History"
+
+},{
+
+    content : "Which of these countries did the Soviet Union NEVER invade?",
+    answer1 : "Afganistan",
+    answer2 : "Finland",
+    answer3 : "Poland",
+    answer4 : "Sweden",
+    corAnswer : "Sweden",
+    category : "History"
+
+},{
+
+    content : "Which of these countries did the Soviet Union NEVER invade?",
+    answer1 : "Afganistan",
+    answer2 : "Finland",
+    answer3 : "Poland",
+    answer4 : "Sweden",
+    corAnswer : "Sweden",
+    category : "History"
+
+},{
+
+    content : "hello",
+    answer1 : "Afganistan",
+    answer2 : "Finland",
+    answer3 : "Poland",
+    answer4 : "Sweden",
+    corAnswer : "Sweden",
+    category : "Arts"
+=======
     content : "Who was an architect designing the St. Paul’s Cathedral?",
     answer1 : "John Nash",
     answer2 : "Augustus Pugin",
@@ -181,6 +220,7 @@ const flashcard = [{
     answer4 : "Prisoner of Azkaban",
     corAnswer : "Philosopher’s Stone",
     category : "English"
+>>>>>>> 5c4c3b093ba260fe97d173e9ab32c3d266c20565
 }
 ];
 

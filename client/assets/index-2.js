@@ -1,4 +1,5 @@
 
+
 // // //////// Hamburger menu on click event to pull out sidebar animation START /////////////
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
@@ -10,6 +11,7 @@ document.querySelector(".hamburger-menu").addEventListener("click", () => {
 const switchColorBtn = document.querySelector("#switch-color")
 const body = document.querySelector("body")
 const flashcard = document.querySelector(".flashcard")
+
 
 let bodyColors = ["#0081C9", "white"];
 let flashcardColors = ["#FFC93C", "purple"];
@@ -29,10 +31,12 @@ let next = 0;
 let fLength;
 let sub;
 let arr = [];
+let data = undefined;
 
 async function displayFlashcard(next, category) {
   const res = await fetch(`http://localhost:3000/flashcard/${category}`);
   const flashcard = await res.json();
+  console.log(flashcard)
   fLength = flashcard.length
   console.log(fLength)
   const contentElement = document.querySelector("#content");
@@ -57,19 +61,6 @@ showButtons.forEach(e => {
   e.addEventListener('click', function () { displayFlashcard(next, sub) })
 })
 //////// View flashcards in categories END /////////////
-
-//////// Submit button revels back of flashcard /////////////
-
-
-const card = document.getElementById("flashcard")
-const subButton = document.getElementById("submit-button")
-subButton.addEventListener("click", flipCard)
-
-
-function flipCard(){
-    card.classList.toggle("flip")
-}
-//////// Submit button revels back of flashcard /////////////
 
 
 //////// Go to the nextprevious flashcard START /////////////
@@ -108,30 +99,27 @@ document.getElementById('import').onclick = async function () {
     let result = JSON.parse(e.target.result);
     for (let key in result) {
       for (let key2 in key) {
-        let data = result[key][key2]
+        data = result[key][key2]
         if (data != undefined)
           arr.push(data)
-          console.log(data)
-        
       }
     }
+    sendData(arr);
   }
+  
   scanner.readAsText(files.item(0));
-  sendData(arr)
 
 };
 //////// Read from uploaded json file End /////////////
 
-
 ////////// Send the fetch request over to the server START /////////////
 async function sendData(arr) {
 
-  console.log(arr.length)
-  if (!arr.length) return
-  let data = {};
+  console.log(arr.length + "check")
+  
 
   for (let e of arr) {
-    data = {
+    let data = {
       'content': e.content,
       'answer1': e.answer1,
       'answer2': e.answer2,
@@ -141,7 +129,7 @@ async function sendData(arr) {
       'category': e.category
     }
 
-    console.log(data)
+    
     const options = {
       method: "POST",
       body: JSON.stringify(data),
@@ -159,3 +147,16 @@ async function sendData(arr) {
   }
 }
 ////////// Send the fetch request over to the server END /////////////
+
+//////// Submit button revels back of flashcard /////////////
+
+
+const card = document.getElementById("flashcard")
+const subButton = document.getElementById("submit-button")
+subButton.addEventListener("click", flipCard)
+
+
+function flipCard(){
+    card.classList.toggle("flip")
+}
+//////// Submit button revels back of flashcard /////////////
