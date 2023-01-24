@@ -58,23 +58,31 @@
     <!-- Sidebar end -->
 
     <!-- Flashcard start -->
-    <div class="flashcard">
-        <form class="flashcard-form">
-            <label class="flashcard-name">1.a In which year did the second world war start?</label><br>
-            <input type="radio" name="answer" value=""> 1938<br>
-            <input type="radio" name="answer" value=""> 1940<br>
-            <input type="radio" name="answer" value=""> 1939<br>
-            <input type="radio" name="answer" value=""> 1941<br>
-          </form>
-        <button id="submit-button">Submit</button>
-        <button id="next-button">Next</button>
-        <button id="previous-button">Previous</button>
-    </div>
+
+    <section class ="main-container">
+        <div class="flashcard" id ="flashcard">
+            <div class = "front">
+                <form class="flashcard-form">
+                    <label class="flashcard-name">In which year did the second world war start?</label><br>
+                    <input type="radio" name="answer" value=""> 1938<br>
+                    <input type="radio" name="answer" value=""> 1940<br>
+                    <input type="radio" name="answer" value=""> 1939<br>
+                    <input type="radio" name="answer" value=""> 1941<br>
+                </form>
+                <button id="submit-button">Submit</button>
+                <button id="next-button">Next</button>
+                <button id="previous-button">Previous</button>
+            </div>
+            <div class = "back">
+                <label class="flashcard-name">In which year did the second world war start?</label><br>
+                <label class="corAnswer">1939</label><br>
+                <button id="next-button">Next</button>
+                <button id="previous-button">Previous</button>
+            </div>
+        </div>
+        </section>
+
+
     <!-- Flashcard end -->
-    <!-- Progress bar start-->
-    <div class="progress-bar">
-        <progress id="progress" value="75" max="100"></progress>
-    </div>
-    <!-- Progress bar end-->
 </body>
 </html>

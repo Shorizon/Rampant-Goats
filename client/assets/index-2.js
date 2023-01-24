@@ -1,15 +1,17 @@
 
-// //////// Hamburger menu on click event to pull out sidebar animation START /////////////
-// document.querySelector(".hamburger-menu").addEventListener("click", () => {
-//   document.querySelector(".container").classList.toggle("change")
-// })
-// //////// Hamburger menu on click event to pull out sidebar animation END /////////////
+
+// // //////// Hamburger menu on click event to pull out sidebar animation START /////////////
+document.querySelector(".hamburger-menu").addEventListener("click", () => {
+  document.querySelector(".container").classList.toggle("change")
+})
+/////////// Hamburger menu on click event to pull out sidebar animation END /////////////
 
 
-// //////// Switch color button functionality START /////////////
-// const switchColorBtn = document.querySelector("#switch-color")
-// const body = document.querySelector("body")
-// const flashcard = document.querySelector(".flashcard")
+//////// Switch color button functionality START ///////////////
+const switchColorBtn = document.querySelector("#switch-color")
+const body = document.querySelector("body")
+const flashcard = document.querySelector(".flashcard")
+
 
 // let bodyColors = ["#0081C9", "white"];
 // let flashcardColors = ["#FFC93C", "purple"];
@@ -57,6 +59,19 @@ showButtons.forEach(e => {
   e.addEventListener('click', function () { displayFlashcard(next, sub) })
 })
 //////// View flashcards in categories END /////////////
+
+//////// Submit button revels back of flashcard /////////////
+
+
+const card = document.getElementById("flashcard")
+const subButton = document.getElementById("submit-button")
+subButton.addEventListener("click", flipCard)
+
+
+function flipCard(){
+    card.classList.toggle("flip")
+}
+//////// Submit button revels back of flashcard /////////////
 
 
 //////// Go to the nextprevious flashcard START /////////////

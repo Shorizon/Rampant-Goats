@@ -1,6 +1,6 @@
-const flashCard = document.getElementById("#flashCard")
-flashCard.addEventListener("click", flipCard)
+const card = document.getElementById("flashCard")
+card.addEventListener("click", flipCard)
 
 function flipCard(){
-    flipCard.classList.toggle("flip")
+    card.classList.toggle("flip")
 }
