@@ -4,10 +4,7 @@ document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
 })
 /////////// Hamburger menu on click event to pull out sidebar animation END /////////////
-//////// Submit button revels back of flashcard /////////////
 
-
-//////// Submit button revels back of flashcard /////////////
 
 //////// Switch color button functionality START ///////////////
 const switchColorBtn = document.querySelector("#switch-color")
@@ -28,6 +25,9 @@ switchColorBtn.addEventListener("click", function () {
 });
 //////// Switch color button functionality END /////////////
 
+
+//////// Submit button revels back of flashcard /////////////
+
 const card = document.getElementById("flashcard")
 const subButton = document.getElementById("submit-button")
 subButton.addEventListener("click", flipCard)
@@ -36,6 +36,9 @@ subButton.addEventListener("click", flipCard)
 function flipCard(){
     card.classList.toggle("flip")
 }
+//////// Submit button revels back of flashcard /////////////
+
+
 //////// View flashcards in categories START /////////////
 let next = 0;
 let fLength,sub = undefined;
@@ -82,11 +85,11 @@ displayFlashcard(next,cat)
 
 
 //////// Go to the nextprevious flashcard START /////////////
-const nextButton = document.getElementById("next-button1")
-const nextBut = document.getElementById("next-button")
+const nextButton = document.getElementById("next-button-front")
+const nextButtonBack = document.getElementById("next-button-back")
 
 nextButton.addEventListener('click' , nextCard)
-nextBut.addEventListener('click' , function() {flipCard(); nextCard()})
+nextButtonBack.addEventListener('click' , function() {flipCard(); nextCard()})
 function nextCard() {
 
   if (next < fLength - 1) {
@@ -99,11 +102,11 @@ function nextCard() {
 };
 
 
-previousButton = document.getElementById("previous-button1")
-previousBut = document.getElementById("previous-button")
+previousButton = document.getElementById("previous-button-front")
+previousButtonBack = document.getElementById("previous-button-back")
 
 previousButton.addEventListener('click', previousCard);
-previousBut.addEventListener('click' , function() {flipCard(); previousCard()})
+previousButtonBack.addEventListener('click' , function() {flipCard(); previousCard()})
 
 function previousCard(){
 
