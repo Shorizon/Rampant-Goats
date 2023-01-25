@@ -189,3 +189,11 @@ async function sendData(arr) {
   }
 }
 ////////// Send the fetch request over to the server END /////////////
+
+module.exports = {
+  flipCard,
+  displayFlashcard,
+  updateProgress,
+  previousCard,
+  sendData
+}
