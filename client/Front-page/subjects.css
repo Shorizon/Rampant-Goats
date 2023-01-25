@@ -105,6 +105,12 @@ h3{
     margin-right: -20px;
     padding: 0px 20px;
 }
+#import-btn{
+    margin-top: 70px;
+    width: 300px;
+    margin-right: -20px;
+    padding: 0px 20px;
+}
 h4 a{
     text-decoration: none;
     color: #000000;
