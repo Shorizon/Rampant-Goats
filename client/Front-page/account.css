@@ -66,17 +66,20 @@ ul {
     position: inherit;
     left: 0;
     text-overflow: nowrap;
+    border-right: 2px solid black;
+    padding-right: 100px;
+    
 }
-.container1 ::after{
+/* .container1 ::after{
     content: "";
     background-color: #000;
-    position: absolute;
+    position:absolute;
     width: 1px;
     height: 525px;
     top: 200px;
     left: 50%;
     display: block;
-}
+} */
 
 
 .container > .container2 {
@@ -84,7 +87,7 @@ ul {
     position: inherit;
     text-overflow: nowrap;
     padding-left: 100px;
-    margin-top: -75px;
+    margin-top: -78px;
 }
 input {
     border-radius: 5px;
