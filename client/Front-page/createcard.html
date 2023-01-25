@@ -20,11 +20,12 @@
             </ul>
     </div>
     <div class="container">
-    <div class="container1" id="sign-up">
-        <form action="">
+      
+    <div class="container1">
+        <form action="text">
             <h2>Create New Flashcard</h2><br><br>
             <label for="text"><b>Question</b></label><br><br>
-             <div id="question"><input type="text" placeholder="Enter Question" name="text" required></div> <br>
+             <div id="question"><textarea name="" id="" cols="18" rows="1" placeholder="Enter Question" required></textarea></div> <br>
             <Label for="text"><p>Answer 1</p></Label>
               <input type="text" placeholder="1st Answer" name="text" required><br>
             <label for="text"><p>Answer 2</p></label>
@@ -34,8 +35,12 @@
             <label for="text"><p>Answer 4</p></label>
               <input type="text" placeholder="4th Answer" name="text" required><br><br><br>
             
-            <button>Create Flashcard</button>
-        
+            <button>Create Flashcard</button><br><br>
+        <div class="container2" id="import"><h4>Import</h4>
+            <input type="file" id="selectFiles" value="Import"/><br><br>
+            <textarea name="" id="" cols="18" rows="1" placeholder="Optional description"></textarea><br><br>
+          <button id="import">Import</button>
+        </div>
         </form>
 </body>
 </html>

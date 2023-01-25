@@ -61,13 +61,18 @@ ul {
     margin-left: 280px;
     margin-top: -50px;
 }
-
 input {
     border-radius: 5px;
     border:0;
     outline:0;}
-input:focus {outline:none!important;}
+input:focus {
+  outline:none!important;
+}
 button{
     border-radius: 10px;
     padding: 2px 5px;
+}
+
+#import{
+  margin-right: -200px;
 }
