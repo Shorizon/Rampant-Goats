@@ -40,7 +40,7 @@ function flipCard(){
 }
 //////// View flashcards in categories START /////////////
 let next = 0;
-let fLength,sub = undefined;
+let fLength,sub,counterQ = undefined;
 let arr = [];
 
 const queryParams = new URLSearchParams(window.location.search);
@@ -50,7 +50,7 @@ async function displayFlashcard(next, category) {
   const res = await fetch(`http://localhost:3000/flashcard/${category}`);
   const flashcard = await res.json();
   fLength = flashcard.length;
-
+  counterQ = next + 1
   const counter = document.querySelector('#counter');
   const contentElement = document.querySelector("#content");
   const backContentElement = document.getElementById("backContent");
@@ -60,7 +60,7 @@ async function displayFlashcard(next, category) {
   const answer4Element = document.querySelector("#answer4");
   const corAnswer = document.querySelector("#corAnswer");
 
-  counter.textContent = (`question ${next+1}/${fLength}`);
+  counter.textContent = (`question ${counterQ}/${fLength}`);
   contentElement.textContent = flashcard[next]["content"];
   backContentElement.textContent = flashcard[next]["content"];
   answer1Element.textContent = flashcard[next]["answer1"];
@@ -68,6 +68,8 @@ async function displayFlashcard(next, category) {
   answer3Element.textContent = flashcard[next]["answer3"];
   answer4Element.textContent = flashcard[next]["answer4"];
   corAnswer.textContent = flashcard[next]["corAnswer"];
+
+  updateProgress(counterQ)
 }
 displayFlashcard(next,cat)
 
