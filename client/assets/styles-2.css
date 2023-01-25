@@ -219,7 +219,7 @@ input[type="radio"] {
   border-color: rgb(200, 200, 200);
 }
 
-#next-button {
+#next-button, .next-button {
   border-radius: 28px;
   border: none;
   font-family: Nunito, sans-serif;
@@ -235,13 +235,13 @@ input[type="radio"] {
   right: 20px;
   bottom: 80px;
 }
-
+ 
 #next-button:hover {
   background-color: rgb(200, 200, 200);
   border-color: rgb(200, 200, 200);
 }
 
-#previous-button {
+#previous-button, .previous-button {
   border-radius: 28px;
   border: none;
   font-family: Nunito, sans-serif;

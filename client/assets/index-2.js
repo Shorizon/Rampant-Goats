@@ -4,7 +4,10 @@ document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
 })
 /////////// Hamburger menu on click event to pull out sidebar animation END /////////////
+//////// Submit button revels back of flashcard /////////////
 
+
+//////// Submit button revels back of flashcard /////////////
 
 //////// Switch color button functionality START ///////////////
 const switchColorBtn = document.querySelector("#switch-color")
@@ -25,12 +28,18 @@ switchColorBtn.addEventListener("click", function () {
 });
 //////// Switch color button functionality END /////////////
 
+const card = document.getElementById("flashcard")
+const subButton = document.getElementById("submit-button")
+subButton.addEventListener("click", flipCard)
+
+
+function flipCard(){
+    card.classList.toggle("flip")
+}
 //////// View flashcards in categories START /////////////
 let next = 0;
-let fLength,sub,total,current = undefined;
+let fLength,sub = undefined;
 let arr = [];
-
-
 
 const queryParams = new URLSearchParams(window.location.search);
 const cat = queryParams.get("category")
@@ -42,17 +51,21 @@ async function displayFlashcard(next, category) {
 
   const counter = document.querySelector('#counter');
   const contentElement = document.querySelector("#content");
+  const backContentElement = document.getElementById("backContent");
   const answer1Element = document.querySelector("#answer1");
   const answer2Element = document.querySelector("#answer2");
   const answer3Element = document.querySelector("#answer3");
   const answer4Element = document.querySelector("#answer4");
+  const corAnswer = document.querySelector("#corAnswer");
 
   counter.textContent = (`question ${next+1}/${fLength}`);
   contentElement.textContent = flashcard[next]["content"];
+  backContentElement.textContent = flashcard[next]["content"];
   answer1Element.textContent = flashcard[next]["answer1"];
   answer2Element.textContent = flashcard[next]["answer2"];
   answer3Element.textContent = flashcard[next]["answer3"];
   answer4Element.textContent = flashcard[next]["answer4"];
+  corAnswer.textContent = flashcard[next]["corAnswer"];
 }
 displayFlashcard(next,cat)
 
@@ -69,22 +82,33 @@ displayFlashcard(next,cat)
 
 
 //////// Go to the nextprevious flashcard START /////////////
-const nextButton = document.getElementById("next-button")
-nextButton.addEventListener('click' , function () {
+const nextButton = document.getElementById("next-button1")
+const nextBut = document.getElementById("next-button")
+
+nextButton.addEventListener('click' , nextCard)
+nextBut.addEventListener('click' , function() {flipCard(); nextCard()})
+function nextCard() {
 
   if (next < fLength - 1) {
-    displayFlashcard((next = next + 1), "History")
+    displayFlashcard((next = next + 1), cat)
   }
   else {
-    console.log("there are no more flashcards left!!!")
+    alert("there are no more flashcards left!!!")
   }
-//
-});
 
-document.getElementById("previous-button").onclick = function () {
+};
+
+
+previousButton = document.getElementById("previous-button1")
+previousBut = document.getElementById("previous-button")
+
+previousButton.addEventListener('click', previousCard);
+previousBut.addEventListener('click' , function() {flipCard(); previousCard()})
+
+function previousCard(){
 
   if (next > 0) {
-    displayFlashcard((next = next - 1), "History")
+    displayFlashcard((next = next - 1), cat)
   }
   else {
     console.log("you are already at the starting flashcard!")
@@ -153,18 +177,3 @@ async function sendData(arr) {
   }
 }
 ////////// Send the fetch request over to the server END /////////////
-
-//////// Submit button revels back of flashcard /////////////
-
-
-const card = document.getElementById("flashcard")
-const subButton = document.getElementById("submit-button")
-subButton.addEventListener("click", flipCard)
-
-
-function flipCard(){
-    card.classList.toggle("flip")
-}
-//////// Submit button revels back of flashcard /////////////
-
-module.exports = {}
