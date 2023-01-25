@@ -6,17 +6,6 @@ document.querySelector(".hamburger-menu").addEventListener("click", () => {
 /////////// Hamburger menu on click event to pull out sidebar animation END /////////////
 
 
-/////////// Progress bar live update START /////////////
-
-const progressBarFill = document.querySelector('.progress-bar-fill');
-
-function updateProgress(percent) {
-  progressBarFill.style.width = percent + '%';
-}
-
-/////////// Progress bar live update END /////////////
-
-
 //////// Submit button revels back of flashcard /////////////
 
 
@@ -81,6 +70,14 @@ async function displayFlashcard(next, category) {
   corAnswer.textContent = flashcard[next]["corAnswer"];
 }
 displayFlashcard(next,cat)
+
+/////////// Progress bar live update START /////////////
+const progressBarFill = document.querySelector('.progress-bar-fill');
+
+function updateProgress(questionNum) {
+  progressBarFill.style.width = (questionNum * (0.2*100)) + '%';
+}
+/////////// Progress bar live update END /////////////
 
 
 // const showButtons = Array.from(document.getElementsByClassName("sub-button"));
