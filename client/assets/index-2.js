@@ -84,10 +84,10 @@ displayFlashcard(next,cat)
 
 
 //////// Go to the nextprevious flashcard START /////////////
-const nextButton = document.getElementsByClassName("next-button")
+const nextButton = document.getElementById("next-button1")
 const nextBut = document.getElementById("next-button")
 
-nextButton[0].addEventListener('click' , nextCard)
+nextButton.addEventListener('click' , nextCard)
 nextBut.addEventListener('click' , function() {flipCard(); nextCard()})
 function nextCard() {
 
@@ -100,10 +100,10 @@ function nextCard() {
 
 };
 
-previousButton = document.getElementsByClassName("previous-button")
+previousButton = document.getElementById("previous-button1")
 previousBut = document.getElementById("previous-button")
 
-previousButton[0].addEventListener('click', previousCard);
+previousButton.addEventListener('click', previousCard);
 previousBut.addEventListener('click' , function() {flipCard(); previousCard()})
 
 function previousCard(){
