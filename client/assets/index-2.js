@@ -34,6 +34,16 @@ subButton.addEventListener("click", flipCard)
 
 function flipCard(){
     card.classList.toggle("flip")
+    let radiobuttons=document.getElementsByName("answer")
+    console.log(radiobuttons.length)
+    // let i = 0;
+    // radiobuttons.forEach( (e) => {
+    //   i++;
+    //   console.log(e.checked)
+    //   if (e.checked){
+
+    //   }
+    // })
 }
 //////// Submit button revels back of flashcard /////////////
 
@@ -189,6 +199,10 @@ async function sendData(arr) {
   }
 }
 ////////// Send the fetch request over to the server END /////////////
+
+
+
+
 
 module.exports = {
   flipCard,
