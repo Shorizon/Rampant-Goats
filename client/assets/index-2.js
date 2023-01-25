@@ -1,5 +1,4 @@
 
-
 // // //////// Hamburger menu on click event to pull out sidebar animation START /////////////
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
@@ -39,10 +38,8 @@ function flipCard(){
 }
 //////// View flashcards in categories START /////////////
 let next = 0;
-let fLength;
-let sub;
+let fLength,sub = undefined;
 let arr = [];
-let data = undefined;
 
 const queryParams = new URLSearchParams(window.location.search);
 const cat = queryParams.get("category")
@@ -50,9 +47,9 @@ const cat = queryParams.get("category")
 async function displayFlashcard(next, category) {
   const res = await fetch(`http://localhost:3000/flashcard/${category}`);
   const flashcard = await res.json();
-  console.log(flashcard)
-  fLength = flashcard.length
-  console.log(fLength)
+  fLength = flashcard.length;
+
+  const counter = document.querySelector('#counter');
   const contentElement = document.querySelector("#content");
   const backContentElement = document.getElementById("backContent");
   const answer1Element = document.querySelector("#answer1");
@@ -61,6 +58,7 @@ async function displayFlashcard(next, category) {
   const answer4Element = document.querySelector("#answer4");
   const corAnswer = document.querySelector("#corAnswer");
 
+  counter.textContent = (`question ${next+1}/${fLength}`);
   contentElement.textContent = flashcard[next]["content"];
   backContentElement.textContent = flashcard[next]["content"];
   answer1Element.textContent = flashcard[next]["answer1"];
@@ -99,6 +97,7 @@ function nextCard() {
   }
 
 };
+
 
 previousButton = document.getElementById("previous-button1")
 previousBut = document.getElementById("previous-button")
@@ -178,5 +177,3 @@ async function sendData(arr) {
   }
 }
 ////////// Send the fetch request over to the server END /////////////
-
-

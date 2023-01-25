@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,10 @@
     <link rel="stylesheet" href="./assets/styles-2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <img id="title-img" src="./images/logo.png"></img>
     <!-- Navbar section start -->
@@ -32,58 +35,64 @@
             <div class="line line-2"></div>
             <div class="line line-3"></div>
         </div>
-    <!-- Hamburger menu end -->
+        <!-- Hamburger menu end -->
 
-    <!-- Sidebar start -->
-    <section class="sidebar">
-        <ul class="menu">
-            <li class="menu-item">
-                <button class="menu-link">Home</button>
-            </li><br>
-            <li class="menu-item">
-                <button class="menu-link">Subjects</button>
-            </li><br>
-            <li class="menu-item">
-                <button class="menu-link">Switch Color</button>
-            </li><br>
-            <li class="menu-item">
-                <button class="menu-link">Help</button>
-            </li><br>
-            <li class="menu-item">
-                <button class="menu-link">Account</button>
-            </li>
-        </ul>
-    </section>
+        <!-- Sidebar start -->
+        <section class="sidebar">
+            <ul class="menu">
+                <li class="menu-item">
+                    <button class="menu-link">Home</button>
+                </li><br>
+                <li class="menu-item">
+                    <button class="menu-link">Subjects</button>
+                </li><br>
+                <li class="menu-item">
+                    <button class="menu-link">Switch Color</button>
+                </li><br>
+                <li class="menu-item">
+                    <button class="menu-link">Help</button>
+                </li><br>
+                <li class="menu-item">
+                    <button class="menu-link">Account</button>
+                </li>
+            </ul>
+        </section>
     </div>
     <!-- Sidebar end -->
 
     <!-- Flashcard start -->
 
-    <section class ="main-container">
-        <div class="flashcard" id ="flashcard">
-            <div class = "front">
+    <section class="main-container">
+        <div class="flashcard" id="flashcard">
+            <div class="front">
+                <p id="counter">sample</p>
                 <form class="flashcard-form">
-                    <label class="flashcard-name" id = "content"></label><br>
-                    
-                    <input type="radio" name="answer" ><label id="answer1">Change this text</label><br>
+
+                    <label class="flashcard-name" id="content"></label><br>
+
+                    <input type="radio" name="answer"><label id="answer1">Change this text</label><br>
                     <input type="radio" name="answer"><label id="answer2">Change this text</label><br>
                     <input type="radio" name="answer"><label id="answer3">Change this text</label> <br>
                     <input type="radio" name="answer"><label id="answer4">Change this text</label><br>
+                    
                 </form>
                 <button id="submit-button">Submit</button>
                 <button id="next-button1">Next</button>
                 <button id="previous-button1">Previous</button>
             </div>
+
             <div class = "back">
                 <label class="flashcard-name" id = "backContent"></label><br>
                 <label class="corAnswer" id = "corAnswer"></label><br>
+
                 <button id="next-button">Next</button>
                 <button id="previous-button">Previous</button>
             </div>
         </div>
-        </section>
+    </section>
 
 
     <!-- Flashcard end -->
 </body>
+
 </html>
