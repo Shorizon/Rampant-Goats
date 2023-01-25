@@ -35,13 +35,27 @@ async function signUp(event) {
             "username": username,
             "password": password
         }
-        alert("new user created!")
+       
+        const options = {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            }
+          }
+    
+          const response = await fetch(`http://localhost:3000/flashcard/signup`, options)
+          console.log("sent req")
+          if (response.status == 201) {
+            console.log("received")
+          }
+
     } else {
         alert("please check your credential")
     }
-   // const res = await fetch(`http://localhost:3000/flashcard/signup`)
     
-
+   
 
 
 }
