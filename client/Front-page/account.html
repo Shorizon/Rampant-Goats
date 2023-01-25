@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
     <link rel="stylesheet" href="./account.css">
+    <script src="./assets/account.js" defer></script>
 </head>
 <body>
     <div id="logo-img">
@@ -16,7 +17,7 @@
                 <li><a href="">Help</a></li>
                 <li><a href="">Account</a></li>
                 <li><a href="">Subjects</a></li>
-                <li><a href="./index.html">Home</a></li>
+                <li><a id= "home" href="./index.html">Home</a></li>
             </ul>
     </div>
     <div class="container" >
@@ -40,11 +41,11 @@
             <form action="">
                 <h2>Sign in</h2><br>
                 <label for="email"><b>Email</b></label><br><br>
-                  <input type="text" placeholder="Enter Email" name="email" required><br><br>
+                  <input type="text" placeholder="Enter Email" name="email" id= "username" required><br><br>
 
                  <label for="psw"><b>Password</b></label><br><br>
-                   <input type="password" placeholder="Enter Password" name="psw" required><br><br>
-                   <button>Sign in</button>
+                   <input type="password" placeholder="Enter Password" name="psw" id="password" required><br><br>
+                   <button id="login">Sign in</button>
             </form>
         </div></div>
 </body>

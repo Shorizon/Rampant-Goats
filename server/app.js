@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const logger = require("./logger");
 const app = express();
-const flashcard = require("./flashcard")
+const flashcard = require("./flashcard");
+const userList = require("../server/assets/account-hold");
 
 app.use(cors());
 app.use(express.json())
@@ -10,16 +11,31 @@ app.use(logger);
 
 const noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i) 
 
+app.get(`/flashcard/login/:username/:password`, (req, res) => {
+    const username = req.params["username"];
+    const password = req.params["password"];
+
+    const exists = userList.filter(u => u["username"] == username && u["password"] == password)
+
+    console.log(exists)
+    if(exists.length){
+        res.json(exists)
+    } else{
+        res.status(404).json({
+            error: "username and password do not match"
+        })
+    }
+
+})
 
 
 app.get("/", (req, res) => {
     res.send(noDuplicates);
 })
 
-
 app.get('/flashcard', (req, res) => {
     
-    res.json(flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i));
+    res.json(noDuplicates);
     console.log(flashcard)
     
 })
