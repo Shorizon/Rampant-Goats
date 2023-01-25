@@ -169,3 +169,5 @@ function flipCard(){
     card.classList.toggle("flip")
 }
 //////// Submit button revels back of flashcard /////////////
+
+module.exports = {}
