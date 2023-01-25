@@ -4,6 +4,19 @@ document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
 })
 /////////// Hamburger menu on click event to pull out sidebar animation END /////////////
+
+
+/////////// Progress bar live update START /////////////
+
+const progressBarFill = document.querySelector('.progress-bar-fill');
+
+function updateProgress(percent) {
+  progressBarFill.style.width = percent + '%';
+}
+
+/////////// Progress bar live update END /////////////
+
+
 //////// Submit button revels back of flashcard /////////////
 
 
