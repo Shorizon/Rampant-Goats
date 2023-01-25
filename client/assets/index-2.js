@@ -5,6 +5,8 @@
 // })
 /////////// Hamburger menu on click event to pull out sidebar animation END /////////////
 
+
+
 //////// Switch color button functionality START ///////////////
 // const switchColorBtn = document.querySelector("#switch-color")
 // const body = document.querySelector("body")
@@ -25,23 +27,14 @@
 //////// Switch color button functionality END /////////////
 
 
-//////// Submit button revels back of flashcard /////////////
 
-const card = document.getElementById("flashcard")
-const subButton = document.getElementById("submit-button")
-subButton.addEventListener("click", flipCard)
-
-
-function flipCard(){
-    card.classList.toggle("flip")
-}
-//////// Submit button revels back of flashcard /////////////
 
 
 //////// View flashcards in categories START /////////////
 let next = 0;
-let fLength,sub,counterQ = undefined;
+let fLength, sub, counterQ, correct = undefined;
 let arr = [];
+let scoreboard = 0;
 
 const queryParams = new URLSearchParams(window.location.search);
 const cat = queryParams.get("category")
@@ -51,7 +44,6 @@ async function displayFlashcard(next, category) {
   const flashcard = await res.json();
   fLength = flashcard.length;
   counterQ = next + 1
-  const counter = document.querySelector('#counter');
   const contentElement = document.querySelector("#content");
   const backContentElement = document.getElementById("backContent");
   const answer1Element = document.querySelector("#answer1");
@@ -60,7 +52,6 @@ async function displayFlashcard(next, category) {
   const answer4Element = document.querySelector("#answer4");
   const corAnswer = document.querySelector("#corAnswer");
 
-  counter.textContent = (`question ${counterQ}/${fLength}`);
   contentElement.textContent = flashcard[next]["content"];
   backContentElement.textContent = flashcard[next]["content"];
   answer1Element.textContent = flashcard[next]["answer1"];
@@ -68,18 +59,46 @@ async function displayFlashcard(next, category) {
   answer3Element.textContent = flashcard[next]["answer3"];
   answer4Element.textContent = flashcard[next]["answer4"];
   corAnswer.textContent = flashcard[next]["corAnswer"];
-
+  correct = flashcard[next]["corIndex"]
+  console.log(correct)
   updateProgress(counterQ)
 }
-displayFlashcard(next,cat)
+displayFlashcard(next, cat)
 
 /////////// Progress bar live update START /////////////
 const progressBarFill = document.querySelector('.progress-bar-fill');
 
 function updateProgress(questionNum) {
-  progressBarFill.style.width = (questionNum * (0.2*100)) + '%';
+  progressBarFill.style.width = (questionNum * (0.2 * 100)) + '%';
+  progressBarFill.textContent = ((`${counterQ}/${fLength}`))
+
 }
 /////////// Progress bar live update END /////////////
+
+//////// Submit button revels back of flashcard /////////////
+
+const card = document.getElementById("flashcard")
+const subButton = document.getElementById("submit-button")
+subButton.addEventListener("click", flipCard)
+
+
+function flipCard() {
+  card.classList.toggle("flip")
+  let radiobuttons = document.getElementsByName("answer")
+  let i = 0;
+  radiobuttons.forEach((e) => {
+    if (e.checked) {
+      if (i == correct) {
+        scoreboard++;
+        console.log("correct!")
+        console.log("scoreboard: " + scoreboard)
+        e.checked = false;
+      }
+    }
+    i++;
+  })
+}
+//////// Submit button revels back of flashcard /////////////
 
 
 // const showButtons = Array.from(document.getElementsByClassName("sub-button"));
@@ -97,8 +116,8 @@ function updateProgress(questionNum) {
 const nextButton = document.getElementById("next-button-front")
 const nextButtonBack = document.getElementById("next-button-back")
 
-nextButton.addEventListener('click' , nextCard)
-nextButtonBack.addEventListener('click' , function() {flipCard(); nextCard()})
+nextButton.addEventListener('click', nextCard)
+nextButtonBack.addEventListener('click', function () { flipCard(); nextCard() })
 function nextCard() {
 
   if (next < fLength - 1) {
@@ -115,9 +134,9 @@ previousButton = document.getElementById("previous-button-front")
 previousButtonBack = document.getElementById("previous-button-back")
 
 previousButton.addEventListener('click', previousCard);
-previousButtonBack.addEventListener('click' , function() {flipCard(); previousCard()})
+previousButtonBack.addEventListener('click', function () { flipCard(); previousCard() })
 
-function previousCard(){
+function previousCard() {
 
   if (next > 0) {
     displayFlashcard((next = next - 1), cat)
@@ -148,7 +167,7 @@ document.getElementById('import').onclick = async function () {
     }
     sendData(arr);
   }
-  
+
   scanner.readAsText(files.item(0));
 
 };
@@ -158,7 +177,7 @@ document.getElementById('import').onclick = async function () {
 async function sendData(arr) {
 
   console.log(arr.length + "check")
-  
+
 
   for (let e of arr) {
     let data = {
@@ -171,7 +190,7 @@ async function sendData(arr) {
       'category': e.category
     }
 
-    
+
     const options = {
       method: "POST",
       body: JSON.stringify(data),
@@ -189,6 +208,10 @@ async function sendData(arr) {
   }
 }
 ////////// Send the fetch request over to the server END /////////////
+
+
+
+
 
 module.exports = {
   flipCard,

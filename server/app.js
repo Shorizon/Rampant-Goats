@@ -61,7 +61,7 @@ app.get('/flashcard/:category', (req, res) => {
 
 app.post("/flashcard", (req, res) => {
     const newFlashcard = req.body;
-    const missingField = ["content", "answer1","answer2","answer3","answer4","corAnswer","category"].some(fc => !Object.hasOwn(newFlashcard, fc));
+    const missingField = ["content", "answer1","answer2","answer3","answer4","corAnswer","category","corIndex"].some(fc => !Object.hasOwn(newFlashcard, fc));
 
     if (missingField) {
         res.status(400).json({

@@ -6,7 +6,8 @@ const flashcard = [{
     answer3 : "1939",
     answer4 : "1941",
     corAnswer : "1939",
-    category : "History"
+    category : "History",
+    corIndex : 2
 
 },{
 
@@ -16,7 +17,8 @@ const flashcard = [{
     answer3 : "Sir Winston Churchill",
     answer4 : "Stanley Baldwin",
     corAnswer : "Neville Chamberlain",
-    category : "History"
+    category : "History",
+    corIndex : 0
     
 },{
 
@@ -26,7 +28,8 @@ const flashcard = [{
     answer3 : "2.06.1950",
     answer4 : "9.08.1951",
     corAnswer : "6.02.1952",
-    category : "History"
+    category : "History",
+    corIndex : 0
     
 },{
 
@@ -36,7 +39,8 @@ const flashcard = [{
     answer3 : "24",
     answer4 : "26",
     corAnswer : "22",
-    category : "History"
+    category : "History",
+    corIndex : 1
 },{
     content : "How old was Mary Queen of Scots when she became queen?",
     answer1 : "1 year old",
@@ -44,7 +48,8 @@ const flashcard = [{
     answer3 : "6 days old",
     answer4 : "On the day she was born",
     corAnswer : "6 days old",
-    category : "History"
+    category : "History",
+    corIndex : 2
 },{
 
     content : "Who painted Mona Lisa",
@@ -53,7 +58,8 @@ const flashcard = [{
     answer3 : "Donatello",
     answer4 : "Raphael",
     corAnswer : "Leonardo Da Vinci",
-    category : "Arts"
+    category : "Arts",
+    corIndex : 1
     
 },{
 
@@ -63,7 +69,8 @@ const flashcard = [{
     answer3 : "Giambologna",
     answer4 : "Benvenuto Cellini",
     corAnswer : "Michelangelo",
-    category : "Arts"
+    category : "Arts",
+    corIndex : 1
 },{
 
     content : "Who was an architect designing the St. Paul’s Cathedral?",
@@ -72,7 +79,8 @@ const flashcard = [{
     answer3 : "Sir Christopher Wren",
     answer4 : "Joseph Paxton",
     corAnswer : "Sir Christopher Wren",
-    category : "Arts"
+    category : "Arts",
+    corIndex : 2
 },{
 
     content : "Which artist was a pioneer of Abstract Expressionism?",
@@ -81,7 +89,8 @@ const flashcard = [{
     answer3 : "Charles Alston",
     answer4 : "Jackson Pollock",
     corAnswer : "Jackson Pollock",
-    category : "Arts"
+    category : "Arts",
+    corIndex : 3
 },{
 
     content : "Who is known as the father of European painting?",
@@ -90,7 +99,8 @@ const flashcard = [{
     answer3 : "Walter Satterlee",
     answer4 : "Adolf Waldinge",
     corAnswer : "Giotto",
-    category : "Arts"
+    category : "Arts",
+    corIndex : 1
 },{
 
     content : "Who was the lead singer of Nirvana?",
@@ -99,7 +109,8 @@ const flashcard = [{
     answer3 : "Michael Jackson",
     answer4 : "Mick Jagger",
     corAnswer : "Kurt Cobain",
-    category : "Music"
+    category : "Music",
+    corIndex : 0
 },{
 
     content : "‘Firestarter’ was a UK number one single for which group?",
@@ -108,7 +119,8 @@ const flashcard = [{
     answer3 : "Black Sabbath",
     answer4 : "Metallica",
     corAnswer : "The Prodigy",
-    category : "Music"
+    category : "Music",
+    corIndex : 1
 },{
 
     content : "What was Elvis Presley’s home called?",
@@ -117,7 +129,8 @@ const flashcard = [{
     answer3 : "Enchanted",
     answer4 : "Elm Close",
     corAnswer : "Graceland",
-    category : "Music"
+    category : "Music",
+    corIndex : 0
 },{
 
     content : "Which group had the most UK number one singles in the 1960s?",
@@ -126,7 +139,8 @@ const flashcard = [{
     answer3 : "The Beatles",
     answer4 : "The Zombies",
     corAnswer : "The Beatles",
-    category : "Music"
+    category : "Music",
+    corIndex : 2
 },{
 
     content : "Gordon Sumner is the real name of which musician?",
@@ -135,7 +149,8 @@ const flashcard = [{
     answer3 : "Eminem",
     answer4 : "Bono",
     corAnswer : "Sting",
-    category : "Music"
+    category : "Music",
+    corIndex : 1
 },{
 
     content : "Which two cities are the settings for Charles Dickens’ A Tale of Two Cities?",
@@ -144,7 +159,8 @@ const flashcard = [{
     answer3 : "Manchester and London",
     answer4 : "Paris and London",
     corAnswer : "Paris and London",
-    category : "English"
+    category : "English",
+    corIndex : 3
 },{
 
     content : "Elizabeth Bennet is the protagonist of which Jane Austen novel?",
@@ -153,7 +169,8 @@ const flashcard = [{
     answer3 : "Pride and Prejudice",
     answer4 : "Mansfield Park",
     corAnswer : "Pride and Prejudice",
-    category : "English"
+    category : "English",
+    corIndex : 2
 },{
 
     content : "What pen name did Mary Anne Evans write her novels under?",
@@ -162,7 +179,8 @@ const flashcard = [{
     answer3 : "Madeleine Wickham",
     answer4 : "Richard Bachman",
     corAnswer : "George Eliot",
-    category : "English"
+    category : "English",
+    corIndex : 0
 },{
 
     content : "Which of these works is not by Geoffrey Chaucer? ",
@@ -171,7 +189,8 @@ const flashcard = [{
     answer3 : "The Book of the Duchess",
     answer4 : "A Farewell to Arms",
     corAnswer : "A Farewell to Arms",
-    category : "English"
+    category : "English",
+    corIndex : 3
 },{
 
     content : "Which of the Harry Potter books was first?",
@@ -180,7 +199,8 @@ const flashcard = [{
     answer3 : "Philosopher’s Stone",
     answer4 : "Prisoner of Azkaban",
     corAnswer : "Philosopher’s Stone",
-    category : "English"
+    category : "English",
+    corIndex : 2
 }
 ];
 
