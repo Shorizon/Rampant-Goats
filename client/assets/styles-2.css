@@ -49,7 +49,7 @@ body {
 
 /* navbar buttons */
 button {
-  border-radius: 28px;
+  border-radius: 10px;
   border: none;
   font-family: Nunito, sans-serif;
   font-weight: 650;
@@ -66,8 +66,9 @@ button {
 
 /* Navbar hover effect */
 button:hover {
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(4, 4, 4);
   border-color: rgb(200, 200, 200);
+  color: #fff;
 }
 
 
@@ -212,7 +213,7 @@ input[type="radio"] {
 /*///// Added css for spacing inside flashcard container ///*/
 
 #submit-button {
-  border-radius: 28px;
+  border-radius: 10px;
   border: none;
   font-family: Nunito, sans-serif;
   font-weight: 650;
@@ -227,8 +228,9 @@ input[type="radio"] {
 }
 
 #submit-button:hover {
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(8, 8, 8);
   border-color: rgb(200, 200, 200);
+  color: #fff;
 }
 #counter{
   bottom: 80px;
@@ -250,7 +252,7 @@ input[type="radio"] {
 
 
 #next-button-front, #next-button-back {
-  border-radius: 28px;
+  border-radius: 10px;
   border: none;
   font-family: Nunito, sans-serif;
   font-weight: 650;
@@ -267,13 +269,14 @@ input[type="radio"] {
   min-width: 70px;
 }
  
-#next-button:hover {
-  background-color: rgb(200, 200, 200);
+#next-button-front:hover, #next-button-back:hover {
+  background-color: rgb(8, 8, 8);
   border-color: rgb(200, 200, 200);
+  color: #fff;
 }
 
 #previous-button-front, #previous-button-back {
-  border-radius: 28px;
+  border-radius: 10px;
   border: none;
   font-family: Nunito, sans-serif;
   font-weight: 650;
@@ -291,9 +294,10 @@ input[type="radio"] {
   bottom: 80px;
 }
 
-#previous-button:hover {
-  background-color: rgb(200, 200, 200);
+#previous-button-front:hover, #previous-button-back:hover  {
+  background-color: rgb(8, 8, 8);
   border-color: rgb(200, 200, 200);
+  color: #fff;
 }
 /*//////////////////////// FLASHCARD CSS END //////////////////////////////*/
 
