@@ -92,6 +92,7 @@ app.post("/flashcard/signup", (req, res) => {
         }
 
         userList.push(newUser);
+        console.log(userList)
         res.status(201).json(newUser);
     }
 
