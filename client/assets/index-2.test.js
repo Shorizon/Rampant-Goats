@@ -1,21 +1,26 @@
 
 const { flipCard, displayFlashcard, updateProgress, previousCard, sendData } = require("./index-2.js")
+const { JSDOM } = jsdom;
+const { document } = new JSDOM().window;
 
 
-test("flipCard should toggle the flip class on the card element", () => {
-    document.body.innerHTML = `
+describe("flipCard function", () => {
+    test("flipCard should toggle the flip class on the card element", () => {
+      document.body.innerHTML = `
       <div id="flashcard"></div>
       <button id="submit-button"></button>
     `;
-    const card = document.getElementById("flashcard");
-    const subButton = document.getElementById("submit-button");
-    subButton.addEventListener("click", flipCard);
+    require('.index-2.js');
+      const card = document.getElementById("flashcard");
+      const subButton = document.getElementById("submit-button");
+      subButton.addEventListener("click", flipCard);
   
-    expect(card.classList.contains("flip")).toBe(false);
-    subButton.click();
-    expect(card.classList.contains("flip")).toBe(true);
-    subButton.click();
-    expect(card.classList.contains("flip")).toBe(false);
+      expect(card.classList.contains("flip")).toBe(false);
+      subButton.click();
+      expect(card.classList.contains("flip")).toBe(true);
+      subButton.click();
+      expect(card.classList.contains("flip")).toBe(false);
+    });
   });
   
 
