@@ -27,12 +27,9 @@ switchColorBtn.addEventListener("click", function () {
 
 //////// View flashcards in categories START /////////////
 let next = 0;
-let fLength;
-let sub;
+let fLength,sub,total,current = undefined;
 let arr = [];
-let data = undefined;
-let total;
-let current;
+
 
 
 const queryParams = new URLSearchParams(window.location.search);
