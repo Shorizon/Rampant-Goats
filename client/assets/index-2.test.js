@@ -1,20 +1,23 @@
 
-const { flipCard } = require("./index-2.js")
-const { displayFlashcard } = require("./index-2.js")
-const { updateProgress } = require("./index-2.js")
-const { previousCard } = require("./index-2.js")
-const { sendData } = require("./index-2.js")
+const { flipCard, displayFlashcard, updateProgress, previousCard, sendData } = require("./index-2.js")
 
 
-describe('flipCard', () => {
-    it('should toggle flip class on card element', () => {
-      const card = document.createElement('div');
-      flipCard();
-      expect(card.classList.contains('flip')).toBe(true);
-      flipCard();
-      expect(card.classList.contains('flip')).toBe(false);
-    });
-  });  
+test("flipCard should toggle the flip class on the card element", () => {
+    document.body.innerHTML = `
+      <div id="flashcard"></div>
+      <button id="submit-button"></button>
+    `;
+    const card = document.getElementById("flashcard");
+    const subButton = document.getElementById("submit-button");
+    subButton.addEventListener("click", flipCard);
+  
+    expect(card.classList.contains("flip")).toBe(false);
+    subButton.click();
+    expect(card.classList.contains("flip")).toBe(true);
+    subButton.click();
+    expect(card.classList.contains("flip")).toBe(false);
+  });
+  
 
 
 // describe("Hamburger menu functionality", () => {
