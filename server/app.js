@@ -73,5 +73,28 @@ app.post("/flashcard", (req, res) => {
     }
 })
 
+app.post("/flashcard/signup", (req, res) => {
+    const newUser = req.body;
+    const missingField = ["username", "password"].some(fc => !Object.hasOwn(newUser, fc));
+    
+    const found  = userList.filter(q => q["username"] == newUser.username)
+
+    if (missingField) {
+        res.status(400).json({
+            "error": "username or password field missing"
+        })
+    } else {
+        
+        if(found.length > 0){
+            res.status(409).json({
+                "error": "ID is already taken"
+            })
+        }
+
+        userList.push(newUser);
+        res.status(201).json(newUser);
+    }
+
+})
 
 module.exports = app;
