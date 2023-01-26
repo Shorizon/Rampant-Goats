@@ -101,12 +101,38 @@ describe("GET /flashcards/:category", () => {
     describe(`GET /flashcard/login/:username/:password`, () => {
 
         describe("when requested to login with correct credentials: ", () => {
-            
+
             let username = "test"
             let password = "123"
 
+            //should return status code "200"
+            test("should return status code 200", async () => {
+                const response = await request(app).get(`/flashcard/login/${username}/${password}`)
+                expect(response.statusCode).toBe(200)
+            })
 
+            // should respond with a json content header
+            test("should return  json content header", async () => {
+                const response = await request(app).get(`/flashcard/login/${username}/${password}`)
+                expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
+            })
 
+            //should respond with a json array of user objects
+            test("should return a json array of flashcards objects", async () => {
+                const response = await request(app).get(`/flashcard/login/${username}/${password}`)
+                expect(response.body[0].username).toBeDefined();
+            })
+
+            //should respond with a the number of keys of the json object: 2
+            test("should return the number of keys of the json object: 2", async () => {
+                const response = await request(app).get(`/flashcard/login/${username}/${password}`)
+                expect(Object.keys(response.body[0]).length).toBe(2);
+            })
+            //should respond with the password key with an empty string
+            test("should return the number of keys of the json object: 2", async () => {
+                const response = await request(app).get(`/flashcard/login/${username}/${password}`)
+                expect(response.body.password).toBe();
+            })
 
 
         })

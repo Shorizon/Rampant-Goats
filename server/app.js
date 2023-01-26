@@ -41,12 +41,11 @@ app.get('/flashcard/:category', (req, res) => {
 app.get(`/flashcard/login/:username/:password`, (req, res) => {
     const username = req.params["username"];
     const password = req.params["password"];
-
     const exists = userList.filter(u => u["username"] == username && u["password"] == password)
 
-    console.log(exists)
     if(exists.length){
-        res.json(exists)
+        exists.password = ""
+        res.status(200).json(exists)
     } else{
         res.status(404).json({
             error: "username and password do not match"
