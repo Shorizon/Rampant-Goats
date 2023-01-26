@@ -32,19 +32,19 @@ body{
         
         }}
 
-        ul {
-          list-style-type: none;
-          padding: 0;
-          overflow: hidden;
-          white-space: nowrap;
-          margin-top: -70px;
-          border-bottom: 1px solid;
-          margin-bottom: 80px;
-          margin-right: 88px;
-          margin-top: -69px;
-          margin-left: -30px;
-        
-        }
+ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: -70px;
+  border-bottom: 1px solid;
+  margin-bottom: 80px;
+  margin-right: 88px;
+  margin-top: -69px;
+  margin-left: -30px;
+       
+}
         
         li {
           float:right;
@@ -129,4 +129,11 @@ body{
 }
 p{
     margin-right: 20px;
+    text-align: left;
 } 
+textarea{
+  margin-left: -460px;
+}
+button{
+  margin-left: -95px;
+}
