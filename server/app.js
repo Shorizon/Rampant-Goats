@@ -14,9 +14,6 @@ function noDupli(noDuplicates){
 return noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i) ;
 }
 
-app.get("/", (req, res) => {
-    //testing purpose
-})
 
 app.get('/flashcard', (req, res) => {
    
@@ -28,21 +25,15 @@ app.get('/flashcard', (req, res) => {
     
 })
 
-app.get('/flashcard/random', (req, res) => {
-   
-    res.json(flashcard[Math.floor(Math.random() * flashcard.length)]);
-    
-})
-
 app.get('/flashcard/:category', (req, res) => {
     const category = req.params["category"];
     const filtered = noDupli(noDuplicates).filter(q => q["category"] == category);
 
-    if (filtered) {
-        res.json(filtered);
+    if (filtered.length > 0) {
+        res.status(200).json(filtered);
     } else {
         res.status(404).json({
-            error: "There is no flashcard with such category"
+            error: `There is no flashcard with such category: ${category}`
         })
     }
 })
@@ -103,4 +94,4 @@ app.post("/flashcard/signup", (req, res) => {
 
 })
 
-module.exports = app;
+module.exports = {app};
