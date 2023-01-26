@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest-dom": "^4.0.0",
+    "jest-environment-jsdom": "^29.4.0",
+    "jsdom": "^21.1.0"
+  }
 }
