@@ -27,10 +27,19 @@ function replaceContent(i, card){
 
 
 
+function updateProgress() {
+  const progressBarFill = document.querySelector('.progress-bar-fill')
+  progressBarFill.style.width = "100%"
+  progressBarFill.textContent = (("3/5"))
+}
+
+
+
     if (typeof exports !== 'undefined') {
         module.exports = {
             fetchCard,
             replaceContent,
+            updateProgress
         };
     }
 

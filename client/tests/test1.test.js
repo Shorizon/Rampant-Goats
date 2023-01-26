@@ -1,4 +1,4 @@
-const {fetchCard, replaceContent} = require('./test1.js')
+const {fetchCard, replaceContent, updateProgress} = require('./test1.js')
 global.fetch = require('jest-fetch-mock')
 
 const fs = require("fs");
@@ -54,7 +54,7 @@ expect(contentElement.textContent).toBe("Who painted Mona Lisa");
 
 
 
-describe("fechCard", () => {
+describe("fetchCard", () => {
     
     afterEach(() => {
         fetch.resetMocks();
@@ -88,3 +88,22 @@ test('it fetches data from the API', async() =>{
 }
 
 )})
+
+
+describe("Progress bar", () => {
+
+    test("The progress bar is in the document", () => {
+        const progressBarFill = document.querySelector('.progress-bar-fill')
+        expect(progressBarFill).not.toBe(null)
+    })
+
+    test("The progress bar's width and content can be dynamically changed", () => {
+        const progressBarFill = document.querySelector('.progress-bar-fill')
+        progressBarFill.style.width = "100%"
+        progressBarFill.textContent = (("3/5"))
+        updateProgress();
+        expect(progressBarFill.style.width).toBe("100%");
+        expect(progressBarFill.textContent).toBe("3/5");
+    });
+})
+
