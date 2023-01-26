@@ -4,34 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rampant Goats</title>
-    <link rel="stylesheet" href="./help.css">
-    <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./account.html">
-    <link rel="stylesheet" href="./createcard.html">
-    <link rel="stylesheet" href="./landing-page.html">
-    <link rel="stylesheet" href="./subjects.html">
-
-
-    <script src="./index.js"></script>
-    <link rel="stylesheet" href="./help.css">
-
+    <title>Rampant Goats - Help</title>
+    <link rel="stylesheet" href="../CSS/help.css">
+    <script src="../JS/help.js" defer></script>
 </head>
 <body>
     
     <div>
-        <img id="logo-img" src="./logo.png" id = "title-img" alt="A logo of Rampant Goats."></div>
+        <img id="logo-img" src="../images/logo.png" id = "title-img" alt="A logo of Rampant Goats."></div>
 
         <div id="menu">
         <ul>
-            <li> <a href="./account.html">Help</a></li>
-            <li><a href="./account.html" >Account</a></li>
-            <li><a href="./subjects.html">Subjects</a></li>
-            <li><a href="./landing-page.html">Home</a></li>
-            <li> <a href="./help.html">Help</a></li>
-            <li><a href="./account.html" title="Account page">Account</a></li>
-            <li><a href="./subjects.html">Subjects</a></li>
-
+            <li> <a href="../HTML/help.html">Help</a></li>
+            <li><a href="../HTML/account.html" >Account</a></li>
+            <li><a href="../HTML/subjects.html">Subjects</a></li>
+            <li><a href="../HTML/landing-page.html">Home</a></li>
         </ul>
     </div></div>
     <div class="container">
@@ -50,7 +37,8 @@ When you use the flashcards: <br>
 <p><strong>Account: </strong> This section allows the users to create their own account to store their own flashcards of chosen subject.</p><br>
 
 <p><strong>Feedback</strong></p>
-<textarea name="textarea" id="" cols="50" rows="10" placeholder="Enter feedback here"></textarea><br>
+<form action="text">
+<textarea id="textarea" name="textarea" cols="50" rows="4" minlength="10" placeholder="Enter feedback here" required></textarea></form><br>
 <button id="feedback-btn">Submit</button>
     </p></div>
    </div>
