@@ -36,6 +36,7 @@ let next = 0;
 let fLength, sub, counterQ, correct = undefined;
 let scoreboard = 0;
 
+
 const queryParams = new URLSearchParams(window.location.search);
 const cat = queryParams.get("category")
 
@@ -108,6 +109,7 @@ function flipCard() {
     span.appendChild(textnode)
     corAnswer.appendChild(span)
     
+      
   }
 }
 
