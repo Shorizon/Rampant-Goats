@@ -3,7 +3,9 @@
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
 })
-///////// Hamburger menu on click event to pull out sidebar animation END /////////////
+
+/////////// Hamburger menu on click event to pull out sidebar animation END /////////////
+
 
 
 
@@ -24,11 +26,8 @@ switchColorBtn.addEventListener("click", function () {
   bodyColorIndex = (bodyColorIndex + 1) % bodyColors.length;
   flashcardColorIndex = (flashcardColorIndex + 1) % flashcardColors.length;
 });
-//////// Switch color button functionality END /////////////
 
-
-
-
+////// Switch color button functionality END /////////////
 
 //////// View flashcards in categories START /////////////
 let next = 0;
