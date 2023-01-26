@@ -38,7 +38,7 @@ h1 {
   } */
   
   #title-img {
-    width: calc(40% + 0.390625vw);
+    width: calc(30% + 0.390625vw);
     height: auto;
     position: absolute;
     left: 30px;
@@ -206,23 +206,20 @@ h1 {
   .images{
     display: flex;
     flex-wrap: wrap;
-    width: 40%;;
+    width: 45%;;
     height: 150px;
   }
 
-  #img1, #img2{
-    margin-bottom: 6px;
-  }
   #img1, #img3{
     margin-right: -4px;
   }
   #img1{
     border-radius: 20px 0px 0px 0px;
-    border-right: 1px solid;
+    height: 163px ;
   }
   #img2{
-    margin-bottom: -7px;
     height: 163px;
+    border-left: 1px solid;
     border-radius: 0px 20px 0px 0px ;
   }
   #img3{
@@ -234,7 +231,6 @@ h1 {
     border-left: 1px solid;
     border-top: 1px solid;
   }
-  
   /*///// Added css for spacing inside flashcard container ///*/
   label.flashcard-name {
     display: block;
