@@ -1,115 +1,182 @@
-body{
-    background-color: #58B09C;
-    margin: 40px 0px;
-    margin-left: 90px;
-    font-family: sans-serif;
-    height: 100vh;
-    
-}
-#logo-img{
-    width: 400px;
-    height: 90px;
-    margin-top: -10px;
+h1 {
+  font-size: 100px;
 }
 
-#menu{
-    /* margin-top: 0px; */
-    margin-left: 20px;
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: Nunito, sans-serif;
+  background-color: #58B09C;
 }
-#subtitle{
-    font-size: 30px;
-    margin-left: 15px;
+/*//////////////////////// NAVBAR CSS START //////////////////////////////*
+/* navbar container */
+.navbar {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+  color: #fff;
+  padding: 40px 30px 30px 30px;
+  margin-left: 400px;
 }
+
+.navbar-items a {
+  margin-top: 10px;
+}
+
+/* Used to be the old title but switched to icon now */
+/* .title {
+  font-size: 35px;
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  left: 30px;
+  text-align: left;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+} */
+
 #title-img {
-    width: calc(40% + 0.390625vw);
-    height: auto;
-    position: absolute;
-    left: 30px;
-    top: 15px;
-  }
-  @media screen and (max-width: 500px){
-    #title-img{
-    width: 200px;
-    left: 15px;
-    }}
-    @media screen and (min-width: 1160px){
-        #title-img{
-        width: 480px;
-        
-        }}
+  width: calc(30% + 0.390625vw);
+  height: auto;
+  position: absolute;
+  left: 30px;
+  top: 15px;
+}
+@media screen and (max-width: 500px){
+  #title-img{
+  width: 200px;
+  left: 15px;
+  }}
 
 
-/* ul {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    margin-top: -20px;
-    border-bottom: 1px solid;
-    margin-bottom: 80px;
-    margin-right: 90px;
-  }
-  
-  li {
-    float:right;
-    width: 10%;
-    font-size: 25px;
-    margin-bottom: 80px;
-  }
-  li a {
-    display: block;
-    color: #000000;
-    text-align: center;
-    padding: 10px 12px;
-    text-decoration: none;
-    font-size: calc(10px + 0.5vw);
-    max-width: 720px;
-    margin: 0 1px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-  }
-  li a:hover {
-    background-color: #000000;
-    color: #58B09C;
-    border-radius: 10px;
-  } */
-  ul {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    margin-top: -70px;
-    border-bottom: 1px solid;
-    margin-bottom: 80px;
-    margin-right: 90px;
-  }
-  
-  li {
-    float:right;
-    width: 10%;
-    font-size: 25px;
-    margin-bottom: 80px;
-  }
-  li a {
-    display: block;
-    color: #000000;
-    text-align: center;
-    padding: 10px 12px;
-    text-decoration: none;
-    max-width: 720px;
-    margin: 0 1px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
-  }
-  li a:hover:not(.active) {
-    background-color: #111;
-  }
+/* navbar buttons */
+a {
+  border-radius: 10px;
+  border: none;
+  font-family: Nunito, sans-serif;
+  font-weight: 650;
+  color: #000000;
+  font-size:calc(10px + 0.5vw);
+  padding: 0.6em 0.9em ;
+  background: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  margin: auto 10px auto 10px;
+}
 
-  li a:hover {
-    background-color: #000000;
-    color: #58B09C;
-    border-radius: 10px;
-  }
+/* Navbar hover effect */
+a:hover {
+  background-color: rgb(4, 4, 4);
+  border-color: rgb(200, 200, 200);
+  color: #fff;
+}
+
+
+/*//////////////////////// NAVBAR CSS END //////////////////////////////*/
+
+
+
+/*//////////////////////// HAMBURGER CSS START //////////////////////////////*/
+
+.container {
+display: none;
+}
+
+.hamburger-menu {
+width: 2rem;
+height: 2rem;
+position: fixed;
+top: 2rem;
+right: 5rem;
+z-index: 200;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+cursor: pointer;
+}
+
+.line {
+width: 100%;
+height: 0.2rem;
+background-color: white;
+box-shadow: 0.1rem 0.2rem rgba(0,0,0,0.2);
+}
+
+.sidebar {
+width: 15rem;
+height: 100vh;
+position: fixed;
+top: 0;
+right: -40rem;
+background-color: white;
+transition: right 0.5s;
+z-index: 1;
+}
+
+.change .sidebar {
+right: 0;
+}
+
+.menu {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+list-style: none;
+}
+
+.menu-item {
+text-align: center;
+}
+
+.menu-link {
+font-family: Nunito, sans-serif;
+font-size: 1.5rem;
+color: black;
+}
+/*//////////////////////// HAMBURGER CSS END //////////////////////////////*/
+
+
+/*//////////////////////// IMPORT AND CREATE FLASHCARD CSS START //////////////////////////////*/
+
+#subtitle{
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+#sub-heading {
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#new-card{
+  margin-top: 70px;
+  width: 300px;
+  margin-right: -20px;
+  padding: 0px 20px;
+}
+
+#import-btn{
+  margin-top: 70px;
+  width: 300px;
+  margin-right: -20px;
+  padding: 0px 20px;
+}
+
+/*//////////////////////// IMPORT AND CREATE FLASHCARD CSS END ////////////////////////////////*/
+
+
+/*//////////////////////// FLASHCARDS CSS START ///////////////////////////////////////////////*/
+
+#subjects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 150px;
+}
 
 .subjects{
     border: 1px solid;
@@ -120,11 +187,15 @@ body{
     width: 45%;
     padding: 10px 10px;
     text-align: justify;
+
 }
+
 #sub1{
+
     background-color: gold;
     margin-bottom: 140px;
     margin-right: 10px;
+
 }
 #sub2{
 background-color: #B9F3FC;
@@ -132,6 +203,7 @@ margin-bottom: 140px;
 }
 
 #sub3{
+
     background-color: #ff6c17;
     margin-right: 10px;
     
@@ -139,107 +211,25 @@ margin-bottom: 140px;
 #sub4{
     background-color: #9f7dde;
     margin-top: -110px;
+
 }
 .ptitle{
-    text-align: center;
+  text-align: center;
 }
 p{
-    font-size: 20px;
+  font-size: 20px;
 }
 h3{
-   margin-bottom: -110px;
+ margin-bottom: -110px;
 }
-#sub-heading ul{
-    border: none;
-}
-#new-card{
-    margin-top: 70px;
-    width: 300px;
-    margin-right: -20px;
-    padding: 0px 20px;
-}
-#import-btn{
-    margin-top: 70px;
-    width: 300px;
-    margin-right: -20px;
-    padding: 0px 20px;
-}
-h4 a{
-    text-decoration: none;
-    color: #000000;
-}
-h4 a:active{
-    text-decoration: none;
-    color: #f8f4f4;
-}
-
-
-/*//////////////////////// HAMBURGER CSS START //////////////////////////////*/
-
-.container {
-    display: none;
-    }
-    
-    .hamburger-menu {
-    width: 2rem;
-    height: 2rem;
-    position: fixed;
-    top: 2rem;
-    right: 5rem;
-    z-index: 200;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    cursor: pointer;
-    }
-    
-    .line {
-    width: 100%;
-    height: 0.2rem;
-    background-color: white;
-    box-shadow: 0.1rem 0.2rem rgba(0,0,0,0.2);
-    }
-    
-    .sidebar {
-    width: 15rem;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: -40rem;
-    background-color: white;
-    transition: right 0.5s;
-    z-index: 1;
-    }
-    
-    .change .sidebar {
-    right: 0;
-    }
-    
-    .menu {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    list-style: none;
-    }
-    
-    .menu-item {
-    text-align: center;
-    }
-    
-    .menu-link {
-    font-family: Nunito, sans-serif;
-    font-size: 1.5rem;
-    color: black;
-    }
-/*//////////////////////// HAMBURGER CSS END //////////////////////////////*/
+/*//////////////////////// FLASHCARDS CSS END ///////////////////////////////////////////////*/
 
 
 /*//////////////////////// MEDIA QUERIES CSS START //////////////////////////////*/
 /* Media query to show the hamburger menu on small screens */
 @media screen and (max-width: 995px) {
   /* Hide regular navbar links */
-  .navbar button {
+  .navbar a {
     display: none;
   }
 

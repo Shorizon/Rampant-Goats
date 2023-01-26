@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rampant Goats - Subjects</title>
+    <title>Flashcard display page</title>
+    <script src="../../assets/index-2.js" defer></script>
     <link rel="stylesheet" href="../CSS/subjects.css">
-    <script src="../JS/userSession.js"></script>
-   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+    <img id="title-img" src="../images/logo.png"></img>
+
+
+    <!-- Navbar section start -->
+    <nav class="navbar">
+        <div class="navbar-items">
+            <a href="./landing-page.html">Home</a>
+            <a href="./subjects.html">Subjects</a>
+            <a id="switch-color">Switch Color</a>
+            <a href="./help.html">Help</a>
+            <a href="./account.html">Account</a>
+        </div>
+    </nav>
+    <!-- Navbar section end -->
+
+
     <!-- Hamburger menu start -->
     <div class="container">
         <div class="hamburger-menu">
@@ -19,31 +40,29 @@
         </div>
         <!-- Hamburger menu end -->
 
+
         <!-- Sidebar start -->
         <section class="sidebar">
             <ul class="menu">
                 <li class="menu-item">
-                    <button class="menu-link">Home</button>
+                    <a href="../HTML/landing-page.html">Home</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Subjects</button>
+                    <a href="../HTML/subjects.html">Subjects</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Switch Color</button>
+                    <a id="switch-color">Color</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Help</button>
+                    <a href="../HTML/help.html">Help</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Account</button>
+                    <a href="../HTML/account.html">Account</a>
                 </li>
             </ul>
         </section>
     </div>
     <!-- Sidebar end -->
-   <div>
-        <img id="logo-img" src="../images/logo.png" id = "title-img" alt="A logo of Rampant Goats."></div>
-
         <div id="menu">
         <ul>
             <li><a href="../HTML/help.html">Help</a></li>
@@ -72,6 +91,9 @@
        <h4 class="ptitle" ><a href = "../HTML/index-2.html?category=Music">Music</a></h4>
         <p> The use of music flashcards in secondary school is a great way to introduce students to the history of music and its many inspirational artists. Flashcard offer a fun and interactive way to understand the history of music. Students can learn about the music of inspirational artists with great achievements. With an increased understanding, students will be better equipped to appreciate music today.
         </p>
+
     </div>
+    <!-- Flashcards end -->
 </body>
+
 </html>

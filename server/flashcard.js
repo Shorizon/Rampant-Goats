@@ -52,7 +52,7 @@ const flashcard = [{
     corIndex : 2
 },{
 
-    content : "Who painted Mona Lisa",
+    content : "Who painted Mona Lisa?",
     answer1 : "Michelangelo",
     answer2 : "Leonardo Da Vinci",
     answer3 : "Donatello",
