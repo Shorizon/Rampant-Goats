@@ -13,6 +13,7 @@ let noDuplicates;
 function noDupli(noDuplicates){
 return noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i) ;
 }
+
 app.get(`/flashcard/login/:username/:password`, (req, res) => {
     const username = req.params["username"];
     const password = req.params["password"];
@@ -29,7 +30,6 @@ app.get(`/flashcard/login/:username/:password`, (req, res) => {
     }
 
 })
-
 
 app.get("/", (req, res) => {
     res.send(noDupli(noDuplicates));
