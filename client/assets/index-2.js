@@ -19,8 +19,7 @@ let bodyColors = ["#0081C9", "white"];
 let flashcardColors = ["#FFC93C", "purple"];
 let bodyColorIndex = 0;
 let flashcardColorIndex = 0;
-const nextButton = document.getElementById("next-button-front")
-let removed = nextButton.style;
+
 
 
 switchColorBtn.addEventListener("click", function () {
@@ -98,8 +97,16 @@ function flipCard() {
     }
     i++;
   })
-  
+
   if (counterQ == fLength){
+    let br = document.createElement("br")
+    let span = document.createElement("span")
+    span.style.fontWeight = ("bold")
+    let textnode = document.createTextNode(`Congratulation you scored: ${scoreboard} out of ${fLength}`);
+    corAnswer.appendChild(br)
+    corAnswer.appendChild(br)
+    span.appendChild(textnode)
+    corAnswer.appendChild(span)
     
   }
 }
@@ -107,6 +114,9 @@ function flipCard() {
 //////// Go to the nextprevious flashcard START /////////////
 
 const nextButtonBack = document.getElementById("next-button-back")
+const nextButton = document.getElementById("next-button-front")
+let savedNext = nextButton.style;
+let savedNextBack = nextButtonBack.style;
 
 nextButton.addEventListener('click', nextCard)
 nextButtonBack.addEventListener('click', function () { flipCard(); nextCard() })
@@ -143,19 +153,18 @@ function previousCard() {
 
 
 function checkEnd(){
-  if (counterQ == fLength ){
+  if (counterQ >= fLength ){
     nextButton.disabled = true;
+    nextButtonBack.disabled = true;
+    nextButtonBack.style.visibility='hidden';
     nextButton.style.backgroundColor = "gray"
     nextButton.style.color = "white"
-   }else{
-     nextButton.disabled = false;
-     nextButton.style = removed;
-   }
-}
-module.exports = {
-  flipCard,
-  displayFlashcard,
-  updateProgress,
-  previousCard,
   
+   }else{   
+     nextButton.disabled = false;
+     nextButton.style = savedNext;
+     nextButtonBack.disabled = false;
+     nextButtonBack.style.visibility='visible';
+     
+   }
 }
