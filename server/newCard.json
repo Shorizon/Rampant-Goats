@@ -1,0 +1,25 @@
+{
+    "flashcards": [{
+
+        "content": "Which of these countries did the Soviet Union NEVER invade?",
+        "answer1": "Afganistan",
+        "answer2": "Finland",
+        "answer3": "Poland",
+        "answer4": "Sweden",
+        "corAnswer": "Sweden",
+        "category": "History",
+        "corIndex": 1
+    },
+    {
+        "content": "1231231241231231331",
+        "answer1": "Afganistan",
+        "answer2": "Finland",
+        "answer3": "Poland",
+        "answer4": "Sweden",
+        "corAnswer": "Sweden",
+        "category": "History", 
+        "corIndex": 1
+        
+    }
+    ]
+}
