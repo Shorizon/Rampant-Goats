@@ -12,28 +12,62 @@
 </head>
 
 <body>
-    <div id="logo-img">
-        <img src="./logo.png" alt="A logo of Rampant Goats.">
-    </div>
+    <img id="title-img" src="../assets/images/logo.png"></img>
+    <!-- Navbar section start -->
+    <nav class="navbar">
+        <div class="navbar-items">
+            <a href="./landing-page-1.html">Home</a>
+            <a href="./subjects.html">Subjects</a>
+            <a id="switch-color">Switch Color</a>
+            <a href="./help.html">Help</a>
+            <a href="./account.html">Account</a>
+        </div>
+    </nav>
+    <!-- Navbar section end -->
 
-    <div id="menu">
-        <ul>
-            <li><a href="./help.html">Help</a></li>
-            <li><a href="./account.html">Account</a></li>
-            <li><a href="./subjects.html">Subjects</a></li>
-            <li><a href="./landing-page.html">Home</a></li>
-        </ul>
-    </div>
+    <!-- Hamburger menu start -->
     <div class="container">
+        <div class="hamburger-menu">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+        <!-- Hamburger menu end -->
 
-        <div class="container1">
+        <!-- Sidebar start -->
+        <section class="sidebar">
+            <ul class="menu">
+                <li class="menu-item">
+                    <a href="./landing-page-1.html">Home</a>
+                </li><br>
+                <li class="menu-item">
+                    <a href="./subjects.html">Subjects</a>
+                </li><br>
+                <li class="menu-item">
+                    <a id="switch-color">Color</a>
+                </li><br>
+                <li class="menu-item">
+                    <a href="./help.html">Help</a>
+                </li><br>
+                <li class="menu-item">
+                    <a href="./account.html">Account</a>
+                </li>
+            </ul>
+        </section>
+    </div>    
 
-            <div class="container2" id="import1">
-                <h4>Import</h4> <br><br>
-                <input type="file" id="selectFiles" value="Import" /><br><br>
-                <button id="import">Import</button>
+        <section class = "box"> 
+            <div class="container3">
+                
+
+                    <div class="container2" id="import1">
+                        <h4>Import</h4> <br><br>
+                        <input type="file" id="selectFiles" value="Import" /><br><br>
+                        <button id="import">Import</button>
+                    </div>
+                
             </div>
-
+        </section>
 </body>
 
 </html>
