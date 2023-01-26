@@ -21,7 +21,7 @@ document.getElementById('import').onclick = async function () {
     sendData(arr);
     arr = []
   }
-  
+
   scanner.readAsText(files.item(0));
 
 };
@@ -31,7 +31,7 @@ document.getElementById('import').onclick = async function () {
 async function sendData(arr) {
 
   console.log(arr.length + "check")
-  
+
 
   for (let e of arr) {
     let data = {
@@ -42,10 +42,10 @@ async function sendData(arr) {
       'answer4': e.answer4,
       'corAnswer': e.corAnswer,
       'category': e.category,
-      'corIndex' : e.corIndex
+      'corIndex': e.corIndex
     }
 
-    
+
     const options = {
       method: "POST",
       body: JSON.stringify(data),
@@ -58,8 +58,7 @@ async function sendData(arr) {
     const response = await fetch("http://localhost:3000/flashcard", options)
 
     if (response.status == 201) {
-      console.log("received")
-
+      alert("list of flashcards has been successfully updated!!!")
     }
   }
 }

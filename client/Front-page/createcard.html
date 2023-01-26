@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Flashcard</title>
-    <link rel="stylesheet" href="./createcard.css">
-    <link rel="stylesheet" href="./help.html">
-    <link rel="stylesheet" href="./landing-page.html">
-    <link rel="stylesheet" href="./subjects.html">
-    <link rel="stylesheet" href="./account.html">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Flashcard</title>
+  <link rel="stylesheet" href="./createcard.css">
+  <link rel="stylesheet" href="./help.html">
+  <link rel="stylesheet" href="./landing-page.html">
+  <link rel="stylesheet" href="./subjects.html">
+  <link rel="stylesheet" href="./account.html">
+  <script src="../assets/newCard.js" defer></script>
 </head>
+
 <body>
-    <div id="logo-img">
-        <img src="./logo.png" alt="A logo of Rampant Goats."></div>
-        
-        <div id="menu">
-            <ul>
-                <li><a href="">Help</a></li>
-                <li><a href="./account.html">Account</a></li>
-                <li><a href="./subjects.html">Subjects</a></li>
-                <li><a href="./landing-page.html">Home</a></li>
-            </ul></div>
-    </div>
-    <div class="container">
-      
+  <div id="logo-img">
+    <img src="./logo.png" alt="A logo of Rampant Goats.">
+  </div>
+
+  <div id="menu">
+    <ul>
+      <li><a href="">Help</a></li>
+      <li><a href="./account.html">Account</a></li>
+      <li><a href="./subjects.html">Subjects</a></li>
+      <li><a href="./landing-page.html">Home</a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="container">
+
     <div class="container1">
-        <form action="text">
-            <h2>Create New Flashcard</h2><br><br>
-            <label for="text"><b>Question</b></label><br><br>
-             <div id="question"><textarea name="" id="" cols="18" rows="1" placeholder="Enter Question" required></textarea></div> <br>
-            <Label for="text"><p>Answer 1</p></Label>
-              <input type="text" placeholder="1st Answer" name="text" required><br>
-            <label for="text"><p>Answer 2</p></label>
-              <input type="text" placeholder="2nd Answer" name="text" required><br><br>
-            <label for="text"><p>Answer 3</p></label>
-              <input type="text" placeholder="3rd Answer" name="text" required><br><br>
-            <label for="text"><p>Answer 4</p></label>
-              <input type="text" placeholder="4th Answer" name="text" required><br><br><br>
-            
-            <button>Create Flashcard</button><br><br>
-         
-        <!-- <div class="container2" id="import"><h4>Import</h4>
-            <input type="file" id="selectFiles" value="Import"/><br><br>
-            <textarea name="" id="" cols="18" rows="1" placeholder="Optional description"></textarea><br><br>
-          <button id="import">Import</button>
-        </div> -->
-        </form> </div>
-        </div>
+     
+        <h2>Create New Flashcard</h2><br><br>
+        <label for="text"><b>Question</b></label><br><br>
+        <div id=""><textarea name="" id="question" cols="18" rows="1" placeholder="Enter Question"
+            required></textarea></div> <br>
+        <Label for="text">
+          <p>Answer 1</p>
+        </Label>
+        <input type="text" id="ans1" placeholder="1st Answer" name="text" required><br>
+        <label for="text">
+          <p>Answer 2</p>
+        </label>
+        <input type="text" id="ans2" placeholder="2nd Answer" name="text" required><br><br>
+        <label for="text">
+          <p>Answer 3</p>
+        </label>
+        <input type="text" id="ans3" placeholder="3rd Answer" name="text" required><br><br>
+        <label for="text">
+          <p>Answer 4</p>
+        </label>
+        <input type="text" id="ans4" placeholder="4th Answer" name="text" required><br><br>
+        <label for="text">
+          <p>Correct Answer</p>
+        </label>
+        <input type="text" id="cat" placeholder="Category" name="text" required><br><br>
+        <label for="text">
+          <p>Category</p>
+        </label>
+        <input type="text" id="cor" placeholder="Correct Answer" name="text" required><br><br>
+        <label for="text">
+          <p>Index of Correct Answer</p>
+        </label>
+        <input type="text" id="indCor" placeholder="corIndex" name="text" required><br><br>
+
+
+        <button id="create">Create Flashcard</button><br><br>
+
+    
+    </div>
+  </div>
 </body>
+
 </html>

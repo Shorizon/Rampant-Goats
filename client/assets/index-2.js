@@ -60,6 +60,7 @@ async function displayFlashcard(next, category) {
   correct = flashcard[next]["corIndex"]
   console.log(correct)
   updateProgress(counterQ)
+  
 }
 displayFlashcard(next, cat)
 
@@ -88,13 +89,15 @@ function flipCard() {
     if (e.checked) {
       if (i == correct) {
         scoreboard++;
-        console.log("correct!")
-        console.log("scoreboard: " + scoreboard)
-        e.checked = false;
       }
+      e.checked = false;
     }
     i++;
   })
+  
+  if (counterQ == fLength){
+    console.log("scoreboard: "+scoreboard)
+  }
 }
 
 //////// Go to the nextprevious flashcard START /////////////
@@ -139,5 +142,5 @@ module.exports = {
   displayFlashcard,
   updateProgress,
   previousCard,
-  sendData
+  
 }
