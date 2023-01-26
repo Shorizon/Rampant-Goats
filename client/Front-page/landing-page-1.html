@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcard display page</title>
-    <script src="./assets/test/functions.js" defer></script>
-    <script src="./assets/index-2.js" defer></script>
-    <link rel="stylesheet" href="./assets/styles-2.css">
+    <script src="../assets/index-2.js" defer></script>
+    <link rel="stylesheet" href="./landing-page-1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
@@ -16,15 +15,15 @@
 </head>
 
 <body>
-    <img id="title-img" src="./images/logo.png"></img>
+    <img id="title-img" src="../assets/images/logo.png"></img>
     <!-- Navbar section start -->
     <nav class="navbar">
         <div class="navbar-items">
-            <button>Home</button>
-            <button>Subjects</button>
-            <button id="switch-color">Switch Color</button>
-            <button>Help</button>
-            <button>Account</button>
+            <a href="./landing-page-1.html">Home</a>
+            <a href="./subjects.html">Subjects</a>
+            <a id="switch-color">Switch Color</a>
+            <a href="./help.html">Help</a>
+            <a href="./account.html">Account</a>
         </div>
     </nav>
     <!-- Navbar section end -->
@@ -42,19 +41,19 @@
         <section class="sidebar">
             <ul class="menu">
                 <li class="menu-item">
-                    <button class="menu-link">Home</button>
+                    <a href="./landing-page-1.html">Home</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Subjects</button>
+                    <a href="./subjects.html">Subjects</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Switch Color</button>
+                    <a id="switch-color">Color</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Help</button>
+                    <a href="./help.html">Help</a>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Account</button>
+                    <a href="./account.html">Account</a>
                 </li>
             </ul>
         </section>
@@ -70,23 +69,16 @@
 
                     <label class="flashcard-name" id="content"></label><br>
 
-                    <input type="radio" name="answer"><label id="answer1">Change this text</label><br>
-                    <input type="radio" name="answer"><label id="answer2">Change this text</label><br>
-                    <input type="radio" name="answer"><label id="answer3">Change this text</label> <br>
-                    <input type="radio" name="answer"><label id="answer4">Change this text</label><br>
-                    
-                </form>
-                <button id="submit-button">Submit</button>                
-                <button id="next-button-front">Next</button>
-                <button id="previous-button-front">Previous</button>
+                    <h2>Welcome To The Rampant Goats Educational Flashcards!</h2>
+            <div>
+                 <p>Rampant Goats is an excellent educational website for teachers and students. It has an extensive library of flashcards that covers topics from English, music, art and history. Teachers can also create their own flashcards to use in the classroom or to help students learn material outside of class. The flashcards are easy to use and can be tailored to meet the individual needs of each student. This makes Rampant Goats an invaluable educational resource for teachers and students alike.</p><br>
+        <!-- <p>More features to come include teachers and parental monitor of student learning progress, identification of student weaknesses, different difficulties of learning materials and many more.  </p> -->
             </div>
-
-            <div class = "back">
-                <label class="flashcard-name" id = "backContent"></label><br>
-                <label class="corAnswer" id = "corAnswer"></label><br>
-
-                <button id="next-button-back">Next</button>
-                <button id="previous-button-back">Previous</button>
+            <img class="images" id="img1" src="./english img.png" alt="" srcset="">
+        <img class="images" id="img2" src="./History.png" alt="" srcset="">
+        <img class="images" id="img3" src="./Music.png" alt="" srcset="">
+        <img class="images" id="img4" src="./Art.png" alt="" srcset="">
+                </form>
             </div>
         </div>
     </section>
