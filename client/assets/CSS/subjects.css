@@ -179,23 +179,20 @@ color: black;
 }
 
 .subjects{
-    border: 1px solid;
-    border-radius: 20px;
-    margin-top: -110px ;
-    font-size: 25px;
-    float: left;
-    width: 45%;
-    padding: 10px 10px;
-    text-align: justify;
-
+  border: none;
+  border-radius: 20px;
+  margin-top: -110px ;
+  font-size: 25px;
+  text-align: center;
+  width: 35%;
+  padding: 10px 10px;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.2);
 }
 
 #sub1{
-
-    background-color: gold;
-    margin-bottom: 140px;
-    margin-right: 10px;
-
+  background-color: #FFB72B;
+  margin-bottom: 140px;
+  margin-right: 10px;
 }
 #sub2{
 background-color: #B9F3FC;
@@ -203,15 +200,12 @@ margin-bottom: 140px;
 }
 
 #sub3{
-
-    background-color: #ff6c17;
-    margin-right: 10px;
-    
+  background-color: #F25A04;
+  margin-right: 10px;
+  
 }
 #sub4{
-    background-color: #9f7dde;
-    margin-top: -110px;
-
+  background-color: #7743DB;
 }
 .ptitle{
   text-align: center;
