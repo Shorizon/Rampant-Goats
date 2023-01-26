@@ -63,6 +63,10 @@ button {
   cursor: pointer;
   margin: auto 10px auto 10px;
 }
+button a{
+  color: inherit
+}
+
 
 /* Navbar hover effect */
 button:hover {
@@ -190,6 +194,9 @@ text-align: center;
 
 .flashcard-form {
   margin: 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .flashcard-name {
@@ -306,15 +313,14 @@ input[type="radio"] {
 /*//////////////////////// PROGRESS BAR CSS START //////////////////////////////*/
 
 .wrapper {
-  width: 500px;
   display: flex;
   justify-content: center;
 }
 
 .progress-bar {
-  width: 100%;
+  width: calc(220px + 0.390625vw);
   background-color: #e0e0e0;
-  padding: 3px;
+  
   border-radius: 3px;
 }
 
@@ -376,4 +382,13 @@ input[type="radio"] {
 
 
 }
+a {
+  text-decoration: none;
+  
+}
 /*//////////////////////// MEDIA QUERIES CSS END //////////////////////////////*/
+.answer-section{
+  width: fit-content;
+   text-align: left;
+  
+}
