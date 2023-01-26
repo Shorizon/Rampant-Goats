@@ -10,19 +10,19 @@ app.use(express.json())
 app.use(logger);
 let noDuplicates;
 
-function noDupli(noDuplicates){
-return noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i) ;
+function noDupli(noDuplicates) {
+    return noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i);
 }
 
 
 app.get('/flashcard', (req, res) => {
-   
-    if(noDupli(noDuplicates).length > 0){
+
+    if (noDupli(noDuplicates).length > 0) {
         res.status(200).json(noDupli(noDuplicates));
-    }else{
-        res.status(400).json({error:"flashcards are missing."})
+    } else {
+        res.status(400).json({ error: "flashcards are missing." })
     }
-    
+
 })
 
 app.get('/flashcard/:category', (req, res) => {
@@ -43,10 +43,10 @@ app.get(`/flashcard/login/:username/:password`, (req, res) => {
     const password = req.params["password"];
     const exists = userList.filter(u => u["username"] == username && u["password"] == password)
 
-    if(exists.length){
+    if (exists.length) {
         exists.password = ""
         res.status(200).json(exists)
-    } else{
+    } else {
         res.status(404).json({
             error: "username and password do not match"
         })
@@ -56,9 +56,9 @@ app.get(`/flashcard/login/:username/:password`, (req, res) => {
 
 app.post("/flashcard", (req, res) => {
     const newFlashcard = req.body;
-    const missingField = ["content", "answer1","answer2","answer3","answer4","corAnswer","category","corIndex"].some(fc => !Object.hasOwn(newFlashcard, fc));
+    const missingField = ["content", "answer1", "answer2", "answer3", "answer4", "corAnswer", "category", "corIndex"].some(fc => !Object.hasOwn(newFlashcard, fc));
 
-    if (missingField) {
+    if (missingField || (typeof newFlashcard.corIndex != "number")) {
         res.status(400).json({
             "error": "your flashcard is missing something!"
         })
@@ -71,26 +71,19 @@ app.post("/flashcard", (req, res) => {
 app.post("/flashcard/signup", (req, res) => {
     const newUser = req.body;
     const missingField = ["username", "password"].some(fc => !Object.hasOwn(newUser, fc));
-    
-    const found  = userList.filter(q => q["username"] == newUser.username)
 
-    if (missingField) {
-        res.status(400).json({
-            "error": "username or password field missing"
+    const found = userList.filter(q => q["username"] == newUser.username)
+    if (found.length > 0) {
+        res.status(409).json({
+            "error": "ID is already taken"
         })
-    } else {
-        
-        if(found.length > 0){
-            res.status(409).json({
-                "error": "ID is already taken"
-            })
-        }
-
-        userList.push(newUser);
-        console.log(userList)
-        res.status(201).json(newUser);
     }
+
+    userList.push(newUser);
+    console.log(newUser)
+    res.status(201).json({ "message": "all good!" });
+
 
 })
 
-module.exports = {app};
+module.exports = { app };

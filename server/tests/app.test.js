@@ -132,7 +132,7 @@ describe(`GET /flashcard/login/:username/:password`, () => {
             expect(Object.keys(response.body[0]).length).toBe(2);
         })
         //should not return any value for the password key
-        test("should return the number of keys of the json object: 2", async () => {
+        test("should not return any value for the password key", async () => {
             const response = await request(app).get(`/flashcard/login/${username}/${password}`)
             expect(response.body.password).toBe();
         })
@@ -151,7 +151,7 @@ describe(`GET /flashcard/login/:username/:password`, () => {
             const response = await request(app).get(`/flashcard/login/${username}/${password}`)
             expect(response.statusCode).toBe(404)
         })
-        
+
 
         // should respond with a json content header
         test("should return  json content header", async () => {
@@ -165,5 +165,152 @@ describe(`GET /flashcard/login/:username/:password`, () => {
             const response = await request(app).get(`/flashcard/login/${username}/${password}`)
             expect(response.body.error).toBe("username and password do not match")
         })
+
+
+    })
+})
+
+describe(`POST /flashcard`, () => {
+
+    describe("when requested to add a new card: ", () => {
+
+        data = {
+            "content": "SAMPLE TEXT",
+            "answer1": "SAMPLE TEXT",
+            "answer2": "SAMPLE TEXT",
+            "answer3": "SAMPLE TEXT",
+            "answer4": "SAMPLE TEXT",
+            "corAnswer": "SAMPLE TEXT",
+            "category": "SAMPLE TEXT",
+            "corIndex": 0
+        }
+
+        //should return status code "201"
+        test("should return status code 201", async () => {
+            const response = await request(app).post(`/flashcard/`).send(data)
+            expect(response.statusCode).toBe(201)
+        })
+        // should respond with a json content header
+        test("should return  json content header", async () => {
+            const response = await request(app).post(`/flashcard/`).send(data)
+            expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
+        })
+
+        //should respond with a json file of a flashcard json objects
+        test("should return a json array of flashcards objects", async () => {
+            const response = await request(app).post(`/flashcard/`).send(data)
+            expect(response.body.content).toBeDefined();
+        })
+
+        //should respond with a the number of keys of the json object: 8
+        test("should return the number of keys of the json object: 2", async () => {
+            const response = await request(app).post(`/flashcard/`).send(data)
+            expect(Object.keys(response.body).length).toBe(8);
+        })
+
+
+    })
+    describe("when requested to add an incomplete card: ", () => {
+        wrongdata = {
+            "content": "SAMPLE TEXT",
+            "answer1": "SAMPLE TEXT",
+            "answer2": "SAMPLE TEXT",
+            "answer3": "SAMPLE TEXT",
+            "answer4": undefined,
+            "corAnswer": "SAMPLE TEXT",
+            "category": "SAMPLE TEXT",
+            "corIndex": 0
+        }
+        //should return status code "400"
+        test("should return status code 400", async () => {
+            const response = await request(app).post(`/flashcard/`).send(wrongdata)
+            expect(response.statusCode).toBe(400)
+        })
+
+
+        // should respond with a json content header
+        test("should return  json content header", async () => {
+            const response = await request(app).post(`/flashcard/`).send(wrongdata)
+            expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
+        })
+
+
+        //should respond with a json file containing the error 
+        test("should return a json file containing the error ", async () => {
+            const response = await request(app).post(`/flashcard/`).send(wrongdata)
+            expect(response.body.error).toBe("your flashcard is missing something!")
+        })
+
+        //should return 400 if the index is not a number
+        test("should return a json file containing the error ", async () => {
+            wrongdata.corIndex = "not a number"
+            const response = await request(app).post(`/flashcard/`).send(wrongdata)
+            expect(response.statusCode).toBe(400)
+        })
+
+
+
+    })
+
+})
+
+describe(`POST /flashcard/signup`, () => {
+
+
+    describe("when requested to register with a new ID: ", () => {
+        user = {
+            username: "new",
+            password: "new"
+        }
+
+        //should return status code "201"
+        test("should return status code 201", async () => {
+            const response = await request(app).post(`/flashcard/signup`).send(user)
+            expect(response.statusCode).toBe(201)
+        })
+        // should respond with a json content header
+        test("should return  json content header", async () => {
+            const response = await request(app).post(`/flashcard/signup`).send(user)
+            expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
+        })
+
+        //should respond with a the number of keys of the json object: 1
+        test("should return the number of keys of the json object: 1", async () => {
+            const response = await request(app).post(`/flashcard/signup`).send(user)
+            expect(Object.keys(response.body).length).toBe(1);
+        })
+
+    })
+    describe("when requested to register with a taken ID: ", () => {
+
+        userT = {
+            username: "test",
+            password: "new"
+        }
+
+        //should return status code "409"
+        test("should return status code 201", async () => {
+            const response = await request(app).post(`/flashcard/signup`).send(userT)
+            expect(response.statusCode).toBe(409)
+        })
+        // should respond with a json content header
+        test("should return  json content header", async () => {
+            const response = await request(app).post(`/flashcard/signup`).send(userT)
+            expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
+        })
+
+        //should respond with a the number of keys of the json object: 1
+        test("should return the number of keys of the json object: 1", async () => {
+            const response = await request(app).post(`/flashcard/signup`).send(userT)
+            expect(Object.keys(response.body).length).toBe(1);
+        })
+
+        //should respond with a json file containing the error 
+        test("should return a json file containing the error ", async () => {
+            const response = await request(app).post(`/flashcard/signup`).send(userT)
+            expect(response.body.error).toBe("ID is already taken")
+        })
+
+
     })
 })
