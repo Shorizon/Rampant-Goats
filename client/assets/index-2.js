@@ -109,7 +109,6 @@ function flipCard() {
     span.appendChild(textnode)
     corAnswer.appendChild(span)
     
-      
   }
 }
 
