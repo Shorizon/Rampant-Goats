@@ -1,17 +1,9 @@
-body{
-  background: #58B09C;
-  font-family: sans-serif;
-  height: 100vh;
-  margin: 40px 0px;
-  margin-left: 90px;
-}
-#logo-img{
-  width: 400px;
-  height: 90px;
-  margin-top: -10px;
-}
-#menu{
-  margin-left: 20px;
+
+body {
+    background-color: #58B09C;
+    margin: 40px 0px;
+    margin-left: 50px;
+
 }
 
 #title-img {
@@ -111,23 +103,9 @@ ul {
     color: #58B09C;
     border-radius: 10px;
   }
-*/
-.container{
-  padding: 100px 100px;
-  max-width: auto;
-  border-radius: 20px;
-  box-shadow: rgba(15, 19, 66, 0.4) 0px 2px 4px, rgba(8, 56, 17, 0.3) 0px 7px 13px -3px, #370b0b33 0px -3px 0px inset;
-  display: flexbox;
-  align-self: center;
-  margin-right: 250px;
-  margin-left: 180px;
-  padding: 20px 20px;
-  text-align: center;
-  margin-top: -70px;
-  /* margin-left: 280px;
-  margin-top: -50px; */
-}
-p{
+  
+p {
+
     margin-right: 20px;
     text-align: left;
 } 
