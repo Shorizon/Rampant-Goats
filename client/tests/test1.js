@@ -9,8 +9,9 @@ async function fetchCard(category) {
 //     ]
 // }
 
-function replace(){
-    
+function replaceContent(i, card){
+    const next = i
+    const flashcard= card
   const contentElement = document.querySelector("#content");
   const backContentElement = document.getElementById("backContent");
   const answer1Element = document.querySelector("#answer1");
@@ -29,7 +30,7 @@ function replace(){
     if (typeof exports !== 'undefined') {
         module.exports = {
             fetchCard,
-            replace
+            replaceContent,
         };
     }
 
