@@ -1,12 +1,25 @@
 {
-    "flashcard": {
-        "content": "In which  year the second world war started?",
-        "answer1": "1938",
-        "answer2": "1940",
-        "answer3": "1939",
-        "answer4": "1941",
-        "corAnswer": "1939",
+    "flashcards": [{
+
+        "content": "Which of these countries did the Soviet Union NEVER invade?",
+        "answer1": "Afganistan",
+        "answer2": "Finland",
+        "answer3": "Poland",
+        "answer4": "Sweden",
+        "corAnswer": "Sweden",
         "category": "History",
-        "corIndex": 2
+        "corIndex": 1
+    },
+    {
+        "content": "1231231241231231331",
+        "answer1": "Afganistan",
+        "answer2": "Finland",
+        "answer3": "Poland",
+        "answer4": "Sweden",
+        "corAnswer": "Sweden",
+        "category": "History", 
+        "corIndex": 1
+        
     }
+    ]
 }

@@ -3,7 +3,9 @@
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change")
 })
-///////// Hamburger menu on click event to pull out sidebar animation END /////////////
+
+/////////// Hamburger menu on click event to pull out sidebar animation END /////////////
+
 
 
 
@@ -18,23 +20,22 @@ let flashcardColors = ["#FFC93C", "purple"];
 let bodyColorIndex = 0;
 let flashcardColorIndex = 0;
 
+
+
 switchColorBtn.addEventListener("click", function () {
   body.style.backgroundColor = bodyColors[bodyColorIndex];
   flashcard.style.backgroundColor = flashcardColors[flashcardColorIndex];
   bodyColorIndex = (bodyColorIndex + 1) % bodyColors.length;
   flashcardColorIndex = (flashcardColorIndex + 1) % flashcardColors.length;
 });
-//////// Switch color button functionality END /////////////
 
-
-
-
+////// Switch color button functionality END /////////////
 
 //////// View flashcards in categories START /////////////
 let next = 0;
 let fLength, sub, counterQ, correct = undefined;
-let arr = [];
 let scoreboard = 0;
+
 
 const queryParams = new URLSearchParams(window.location.search);
 const cat = queryParams.get("category")
@@ -60,8 +61,10 @@ async function displayFlashcard(next, category) {
   answer4Element.textContent = flashcard[next]["answer4"];
   corAnswer.textContent = flashcard[next]["corAnswer"];
   correct = flashcard[next]["corIndex"]
-  console.log(correct)
+
+
   updateProgress(counterQ)
+  checkEnd()
 }
 displayFlashcard(next, cat)
 
@@ -89,31 +92,32 @@ function flipCard() {
     if (e.checked) {
       if (i == correct) {
         scoreboard++;
-        console.log("correct!")
-        console.log("scoreboard: " + scoreboard)
-        e.checked = false;
       }
+      e.checked = false;
     }
     i++;
   })
+
+  if (counterQ == fLength){
+    let br = document.createElement("br")
+    let span = document.createElement("span")
+    span.style.fontWeight = ("bold")
+    let textnode = document.createTextNode(`Congratulation you scored: ${scoreboard} out of ${fLength}`);
+    corAnswer.appendChild(br)
+    corAnswer.appendChild(br)
+    span.appendChild(textnode)
+    corAnswer.appendChild(span)
+    
+      
+  }
 }
-//////// Submit button revels back of flashcard /////////////
-
-
-// const showButtons = Array.from(document.getElementsByClassName("sub-button"));
-
-// showButtons.forEach(e => {
-//   e.addEventListener('click', (f) => {
-//     sub = f.target.id
-//   })
-//   e.addEventListener('click', function () { displayFlashcard(next, sub) })
-// })
-//////// View flashcards in categories END /////////////
-
 
 //////// Go to the nextprevious flashcard START /////////////
-const nextButton = document.getElementById("next-button-front")
+
 const nextButtonBack = document.getElementById("next-button-back")
+const nextButton = document.getElementById("next-button-front")
+let savedNext = nextButton.style;
+let savedNextBack = nextButtonBack.style;
 
 nextButton.addEventListener('click', nextCard)
 nextButtonBack.addEventListener('click', function () { flipCard(); nextCard() })
@@ -139,6 +143,7 @@ function previousCard() {
 
   if (next > 0) {
     displayFlashcard((next = next - 1), cat)
+    
   }
   else {
     console.log("you are already at the starting flashcard!")
@@ -147,75 +152,20 @@ function previousCard() {
 };
 ////// Go to the nextprevious flashcard END /////////////
 
-//////// Read from uploaded json file START /////////////
 
-document.getElementById('import').onclick = async function () {
-  let files = document.getElementById('selectFiles').files;
-  if (!files.length)
-    return false;
-  let scanner = new FileReader();
-
-  scanner.onload = function (e) {
-    let result = JSON.parse(e.target.result);
-    for (let key in result) {
-      for (let key2 in key) {
-        data = result[key][key2]
-        if (data != undefined)
-          arr.push(data)
-      }
-    }
-    sendData(arr);
-  }
-
-  scanner.readAsText(files.item(0));
-
-};
-//////// Read from uploaded json file End /////////////
-
-////////// Send the fetch request over to the server START /////////////
-async function sendData(arr) {
-
-  console.log(arr.length + "check")
-
-
-  for (let e of arr) {
-    let data = {
-      'content': e.content,
-      'answer1': e.answer1,
-      'answer2': e.answer2,
-      'answer3': e.answer3,
-      'answer4': e.answer4,
-      'corAnswer': e.corAnswer,
-      'category': e.category
-    }
-
-
-    const options = {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    }
-
-    const response = await fetch("http://localhost:3000/flashcard", options)
-
-    if (response.status == 201) {
-      console.log("received")
-    }
-  }
-}
-////////// Send the fetch request over to the server END /////////////
-
-
-
-
-
-module.exports = {
-  flipCard,
-  displayFlashcard,
-  updateProgress,
-  previousCard,
-  sendData
+function checkEnd(){
+  if (counterQ >= fLength ){
+    nextButton.disabled = true;
+    nextButtonBack.disabled = true;
+    nextButtonBack.style.visibility='hidden';
+    nextButton.style.backgroundColor = "gray"
+    nextButton.style.color = "white"
+  
+   }else{   
+     nextButton.disabled = false;
+     nextButton.style = savedNext;
+     nextButtonBack.disabled = false;
+     nextButtonBack.style.visibility='visible';
+     
+   }
 }

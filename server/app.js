@@ -8,8 +8,11 @@ const userList = require("../server/assets/account-hold");
 app.use(cors());
 app.use(express.json())
 app.use(logger);
+let noDuplicates;
 
-const noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i) 
+function noDupli(noDuplicates){
+return noDuplicates = flashcard.filter((v, i, a) => a.findIndex(v2 => ['content', 'corAnswer'].every(k => v2[k] === v[k])) === i) ;
+}
 
 app.get(`/flashcard/login/:username/:password`, (req, res) => {
     const username = req.params["username"];
@@ -28,14 +31,13 @@ app.get(`/flashcard/login/:username/:password`, (req, res) => {
 
 })
 
-
 app.get("/", (req, res) => {
-    res.send(noDuplicates);
+    res.send(noDupli(noDuplicates));
 })
 
 app.get('/flashcard', (req, res) => {
-    
-    res.json(noDuplicates);
+   
+    res.json(noDupli(noDuplicates));
     console.log(flashcard)
     
 })
@@ -48,7 +50,7 @@ app.get('/flashcard/random', (req, res) => {
 
 app.get('/flashcard/:category', (req, res) => {
     const category = req.params["category"];
-    const filtered = noDuplicates.filter(q => q["category"] == category);
+    const filtered = noDupli(noDuplicates).filter(q => q["category"] == category);
 
     if (filtered) {
         res.json(filtered);

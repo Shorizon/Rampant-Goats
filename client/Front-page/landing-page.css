@@ -73,6 +73,7 @@ li a:hover {
   border-radius: 10px;
 }
 
+
 h2{
   font-size: 35px;
   text-align: center;
@@ -86,6 +87,7 @@ p{
 }
 
 .container{
+
   padding: 100px 100px;
   max-width: auto;
   border-radius: 20px;

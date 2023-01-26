@@ -1,18 +1,22 @@
 body{
-    background: #6bb499;
+    background-color: #58B09C;
+    margin: 40px 0px;
+    margin-left: 90px;
     font-family: sans-serif;
     height: 100vh;
-    /* margin-left: 90px; */
-}
-img {
-    /* text-align: left; */
-    /* align-items: flex-start; */
-    width: 400px;
-    height: 90px;
-    margin-top: 10px;
+    margin-top: 50px;
     
 }
-
+#logo-img {
+    width: 400px;
+    height: 90px;
+    margin-top: -10px;
+    
+}
+#menu{
+    /* margin-top: 0px; */
+    margin-left: 20px;
+}
 ul {
     list-style-type: none;
     padding: 0;
@@ -22,6 +26,9 @@ ul {
     border-bottom: 1px solid;
     margin-bottom: 80px;
     margin-right: 20px;
+    margin-right: 90px;
+    margin-top: -77px;
+    margin-left: -25px;
   }
   
   li {
