@@ -15,11 +15,11 @@ test('increaseCount function should return 1', () => {
   });
   
 test('updateProgress function should update the width and text of the progressBarFill', () => {
-    // Create a mock element to represent the progressBarFill
+    // Mock element to represent the progressBarFill
     const progressBarFill = { style: { width: '0%' }, textContent: '' };
-    // Call the updateProgress function with a questionNum of 2
+    // Call updateProgress function with a questionNum of 2
     updateProgress(2,progressBarFill);
-    // Assert that the width and text of the progressBarFill have been updated correctly
+    // Width and text of the progressBarFill have been updated
     expect(progressBarFill.style.width).toBe('40%');
     expect(progressBarFill.textContent).toBe('2/5');
 });
