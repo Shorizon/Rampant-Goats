@@ -187,7 +187,8 @@ async function sendData(arr) {
       'answer3': e.answer3,
       'answer4': e.answer4,
       'corAnswer': e.corAnswer,
-      'category': e.category
+      'category': e.category,
+      'corIndex': e.corIndex
     }
 
 
