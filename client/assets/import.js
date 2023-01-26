@@ -58,8 +58,7 @@ async function sendData(arr) {
     const response = await fetch("http://localhost:3000/flashcard", options)
 
     if (response.status == 201) {
-      console.log("received")
-
+      alert("list of flashcards has been successfully updated!!!")
     }
   }
 }
