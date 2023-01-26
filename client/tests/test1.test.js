@@ -2,12 +2,12 @@ const {fetchCard, replaceContent} = require('./test1.js')
 global.fetch = require('jest-fetch-mock')
 
 const fs = require("fs");
-window.document.body.innerHTML = fs.readFileSync("../index-2.html")
+window.document.body.innerHTML = fs.readFileSync("../assets/HTML/flashcards.html")
 
 describe("replaceContent", () => {
 
     afterEach(()=> {
-        window.document.body.innerHTML = fs.readFileSync("../index-2.html")
+        window.document.body.innerHTML = fs.readFileSync("../assets/HTML/flashcards.html")
     })
 
     test('check if replace changes HTML text content', ()=>{
