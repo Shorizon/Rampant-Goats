@@ -119,9 +119,10 @@ body{
     float: left;
     width: 45%;
     padding: 10px 10px;
+    text-align: justify;
 }
 #sub1{
-    background-color: #FFB72B;
+    background-color: gold;
     margin-bottom: 140px;
     margin-right: 10px;
 }
@@ -131,12 +132,13 @@ margin-bottom: 140px;
 }
 
 #sub3{
-    background-color: #F25A04;
+    background-color: #ff6c17;
     margin-right: 10px;
     
 }
 #sub4{
-    background-color: #7743DB;
+    background-color: #9f7dde;
+    margin-top: -110px;
 }
 .ptitle{
     text-align: center;
