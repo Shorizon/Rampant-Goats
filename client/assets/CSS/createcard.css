@@ -38,6 +38,8 @@ body {
 
 #title-img {
   width: calc(30% + 0.390625vw);
+  max-width: 560px;
+
   height: auto;
     position: absolute;
   left: 30px;
@@ -181,7 +183,8 @@ color: black;
     padding: 30px 150px;
     justify-content: center;
     max-width: 600px;
-    max-height: 600px;
+    max-height: 1000px;
+
     border-radius: 20px;
     box-shadow: rgba(15, 19, 66, 0.4) 0px 2px 4px, rgba(8, 56, 17, 0.3) 0px 7px 13px -3px, #370b0b33 0px -3px 0px inset;
     display: flex;
