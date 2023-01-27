@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcard display page</title>
-    <script src="./assets/index-2.js" defer></script>
-    <link rel="stylesheet" href="./assets/styles-2.css">
+    <script src="../JS/flashcards.js" defer></script>
+    <link rel="stylesheet" href="../CSS/styles-2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
@@ -15,15 +15,15 @@
 </head>
 
 <body>
-    <img id="title-img" src="./assets/images/logo.png"></img>
+    <img id="title-img" src="../images/logo.png"></img>
     <!-- Navbar section start -->
     <nav class="navbar">
         <div class="navbar-items">
-            <button><a href="./Front-page/landing-page.html">Home</a></button>
-            <button><a href="./Front-page/subjects.html">Subjects</a></button>
+            <button><a href="../HTML/landing-page.html">Home</a></button>
+            <button><a href="../HTML/subjects.html">Subjects</a></button>
             <button id="switch-color">Switch Color</button>
-            <button><a href="./Front-page/help.html">Help</a></button>
-            <button><a href="./Front-page/account.html">Account</a></button>
+            <button><a href="../HTML/help.html">Help</a></button>
+            <button><a href="../HTML/account.html">Account</a></button>
         </div>
     </nav>
     <!-- Navbar section end -->
@@ -41,19 +41,19 @@
         <section class="sidebar">
             <ul class="menu">
                 <li class="menu-item">
-                    <button class="menu-link">Home</button>
+                    <button  class="menu-link"><a href="../HTML/landing-page.html"></a> Home</button>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Subjects</button>
+                    <button class="menu-link"> <a href="../HTML/subjects.html"></a> Subjects</button>
                 </li><br>
                 <li class="menu-item">
                     <button class="menu-link">Switch Color</button>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Help</button>
+                    <button class="menu-link"> <a href="../HTML/help.html"></a> Help</button>
                 </li><br>
                 <li class="menu-item">
-                    <button class="menu-link">Account</button>
+                    <button class="menu-link"> <a href="../HTML/account.html"></a> Account</button>
                 </li>
             </ul>
         </section>
@@ -80,7 +80,7 @@
                 <button id="previous-button-front">Previous</button>
             </div>
 
-            <div class = "back">
+            <div class = "back" id="back-flip">
                 <label class="flashcard-name" id = "backContent"></label><br>
                 <label class="corAnswer" id = "corAnswer"></label><br>
 

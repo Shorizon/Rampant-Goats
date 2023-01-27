@@ -1,13 +1,13 @@
-const {fetchCard, replaceContent} = require('./test1.js')
+const {fetchCard, replaceContent, updateProgress, switchColor, flipCard} = require('./test1.js')
 global.fetch = require('jest-fetch-mock')
 
 const fs = require("fs");
-window.document.body.innerHTML = fs.readFileSync("../index-2.html")
+window.document.body.innerHTML = fs.readFileSync("../assets/HTML/flashcards.html")
 
 describe("replaceContent", () => {
 
     afterEach(()=> {
-        window.document.body.innerHTML = fs.readFileSync("../index-2.html")
+        window.document.body.innerHTML = fs.readFileSync("../assets/HTML/flashcards.html")
     })
 
     test('check if replace changes HTML text content', ()=>{
@@ -54,7 +54,7 @@ expect(contentElement.textContent).toBe("Who painted Mona Lisa");
 
 
 
-describe("fechCard", () => {
+describe("fetchCard", () => {
     
     afterEach(() => {
         fetch.resetMocks();
@@ -88,3 +88,105 @@ test('it fetches data from the API', async() =>{
 }
 
 )})
+
+
+describe("Progress bar", () => {
+
+    test("The progress bar is in the document", () => {
+        const progressBarFill = document.querySelector('.progress-bar-fill')
+        expect(progressBarFill).not.toBe(null)
+    })
+
+    test("The progress bar's width and content can be dynamically changed", () => {
+        const progressBarFill = document.querySelector('.progress-bar-fill')
+        progressBarFill.style.width = "100%"
+        progressBarFill.textContent = (("3/5"))
+        updateProgress();
+        expect(progressBarFill.style.width).toBe("100%");
+        expect(progressBarFill.textContent).toBe("3/5");
+    });
+})
+
+describe("Progress bar", () => {
+
+    test("The progress bar is in the document", () => {
+        const progressBarFill = document.querySelector('.progress-bar-fill')
+        expect(progressBarFill).not.toBe(null)
+    })
+
+    test("The progress bar's width and content can be dynamically changed", () => {
+        const progressBarFill = document.querySelector('.progress-bar-fill')
+        progressBarFill.style.width = "100%"
+        progressBarFill.textContent = (("3/5"))
+        updateProgress();
+        expect(progressBarFill.style.width).toBe("100%");
+        expect(progressBarFill.textContent).toBe("3/5");
+    });
+})
+
+describe("Testing if hamburger menu works", () => {
+
+    test("Test if hamburger menu exists", () => {
+        const hamburger = document.querySelector(".hamburger-menu")
+        const container = document.querySelector(".container")
+        expect(hamburger).not.toBe(null)
+        expect(container).not.toBe(null)
+    })
+
+    test("Test if hamburger menu responds to event listener and adds change class", () => {
+        const hamburger = document.querySelector(".hamburger-menu")
+        const container = document.querySelector(".container")
+        hamburger.addEventListener("click", () => {
+            container.classList.toggle("change")
+          })
+    })
+
+})
+
+describe("Test if the switch color button changes the color of the HTML body", () => {
+
+    test("Test if the body, button and flashcard exist", () => {
+        const switchColorBtn = document.querySelector("#switch-color")
+        const body = document.querySelector("body")
+        const flashcard = document.querySelector(".flashcard")
+        expect(switchColorBtn).not.toBe(null)
+        expect(body).not.toBe(null)
+        expect(flashcard).not.toBe(null)
+    })
+
+    test("Does the switch color button change the color of the body and flashcard", () => {
+        const switchColorBtn = document.querySelector("#switch-color")
+        const body = document.querySelector("body")
+        const flashcard = document.querySelector(".flashcard")
+        let bodyColor = body.style.backgroundColor
+        let flashcardColor = flashcard.style.backgroundColor
+        switchColor()
+        expect(bodyColor).not.toBe("green")
+        expect(flashcardColor).not.toBe("green")
+       })
+   })
+
+describe("Does the flipcard and displaying the score work?", () => {
+
+    test("Does the card exist?", () => {
+        const card = document.getElementById("flashcard")
+        expect(card).not.toBe(null)
+    })
+
+    test("Can you add the flip class to the card?", () => {
+        const card = document.getElementById("flashcard");
+        flipCard();
+        expect(card.classList.contains('flip')).toBe(true);
+    })
+
+    
+    // test("test if the score is increased", () => {
+    //     flipCard()
+    //     expect(scoreboard).toBe(1);
+    // })
+    
+    // test("test if the corAnswer div has the text", () => {
+    //     flipCard()
+    //     expect(corAnswer.textContent).toBe("Congratulations you scored: 5 out of 5");
+    // })
+})

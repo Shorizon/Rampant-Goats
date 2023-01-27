@@ -19,7 +19,7 @@ async function login(event) {
     if (currentUser) {
         alert(`logged in as : ${user}`)
         sessionStorage.setItem("user", user)
-        window.location.replace("./index.html")
+        window.location.replace("../Front-page/landing-page.html")
     }
 
 }

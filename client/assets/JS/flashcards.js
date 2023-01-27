@@ -15,10 +15,12 @@ const body = document.querySelector("body")
 const flashcard = document.querySelector(".flashcard")
 
 
-let bodyColors = ["#0081C9", "white"];
-let flashcardColors = ["#FFC93C", "purple"];
+let bodyColors = ["#0081C9", "white", "#58B09C"];
+let flashcardColors = ["#FFC93C", "purple", "#58B09C"];
 let bodyColorIndex = 0;
 let flashcardColorIndex = 0;
+
+
 
 switchColorBtn.addEventListener("click", function () {
   body.style.backgroundColor = bodyColors[bodyColorIndex];
@@ -33,6 +35,7 @@ switchColorBtn.addEventListener("click", function () {
 let next = 0;
 let fLength, sub, counterQ, correct = undefined;
 let scoreboard = 0;
+
 
 const queryParams = new URLSearchParams(window.location.search);
 const cat = queryParams.get("category")
@@ -58,8 +61,10 @@ async function displayFlashcard(next, category) {
   answer4Element.textContent = flashcard[next]["answer4"];
   corAnswer.textContent = flashcard[next]["corAnswer"];
   correct = flashcard[next]["corIndex"]
-  console.log(correct)
+
+
   updateProgress(counterQ)
+  checkEnd()
 }
 displayFlashcard(next, cat)
 
@@ -69,7 +74,6 @@ const progressBarFill = document.querySelector('.progress-bar-fill');
 function updateProgress(questionNum) {
   progressBarFill.style.width = (questionNum * (0.2 * 100)) + '%';
   progressBarFill.textContent = ((`${counterQ}/${fLength}`))
-
 }
 /////////// Progress bar live update END /////////////
 
@@ -88,18 +92,31 @@ function flipCard() {
     if (e.checked) {
       if (i == correct) {
         scoreboard++;
-        console.log("correct!")
-        console.log("scoreboard: " + scoreboard)
-        e.checked = false;
       }
+      e.checked = false;
     }
     i++;
   })
+
+  if (counterQ == fLength){
+    let br = document.createElement("br")
+    let span = document.createElement("span")
+    span.style.fontWeight = ("bold")
+    let textnode = document.createTextNode(`Congratulation you scored: ${scoreboard} out of ${fLength}`);
+    corAnswer.appendChild(br)
+    corAnswer.appendChild(br)
+    span.appendChild(textnode)
+    corAnswer.appendChild(span)
+    
+  }
 }
 
 //////// Go to the nextprevious flashcard START /////////////
-const nextButton = document.getElementById("next-button-front")
+
 const nextButtonBack = document.getElementById("next-button-back")
+const nextButton = document.getElementById("next-button-front")
+let savedNext = nextButton.style;
+let savedNextBack = nextButtonBack.style;
 
 nextButton.addEventListener('click', nextCard)
 nextButtonBack.addEventListener('click', function () { flipCard(); nextCard() })
@@ -125,6 +142,7 @@ function previousCard() {
 
   if (next > 0) {
     displayFlashcard((next = next - 1), cat)
+    
   }
   else {
     console.log("you are already at the starting flashcard!")
@@ -134,10 +152,19 @@ function previousCard() {
 ////// Go to the nextprevious flashcard END /////////////
 
 
-module.exports = {
-  flipCard,
-  displayFlashcard,
-  updateProgress,
-  previousCard,
-  sendData
+function checkEnd(){
+  if (counterQ >= fLength ){
+    nextButton.disabled = true;
+    nextButtonBack.disabled = true;
+    nextButtonBack.style.visibility='hidden';
+    nextButton.style.backgroundColor = "gray"
+    nextButton.style.color = "white"
+  
+   }else{   
+     nextButton.disabled = false;
+     nextButton.style = savedNext;
+     nextButtonBack.disabled = false;
+     nextButtonBack.style.visibility='visible';
+     
+   }
 }

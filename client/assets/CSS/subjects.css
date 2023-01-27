@@ -1,13 +1,13 @@
+h1 {
+  font-size: 100px;
+}
+
 body {
   margin: 0;
   height: 100vh;
   width: 100%;
   font-family: Nunito, sans-serif;
   background-color: #58B09C;
-}
-.header{
-  min-height: 120px;
-    border-bottom: 1px solid;
 }
 /*//////////////////////// NAVBAR CSS START //////////////////////////////*
 /* navbar container */
@@ -16,7 +16,7 @@ body {
   justify-content: flex-end; 
   align-items: center; 
   color: #fff;
-  padding: 30px;
+  padding: 40px 30px 30px 30px;
   margin-left: 400px;
 }
 
@@ -38,9 +38,9 @@ body {
 } */
 
 #title-img {
-  width: calc(40% + 0.390625vw);
+  width: calc(30% + 0.390625vw);
   height: auto;
-    position: absolute;
+  position: absolute;
   left: 30px;
   top: 15px;
 }
@@ -137,6 +137,91 @@ font-size: 1.5rem;
 color: black;
 }
 /*//////////////////////// HAMBURGER CSS END //////////////////////////////*/
+
+
+/*//////////////////////// IMPORT AND CREATE FLASHCARD CSS START //////////////////////////////*/
+
+#subtitle{
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+#sub-heading {
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#new-card{
+  margin-top: 70px;
+  width: 300px;
+  margin-right: -20px;
+  padding: 0px 20px;
+}
+
+#import-btn{
+  margin-top: 70px;
+  width: 300px;
+  margin-right: -20px;
+  padding: 0px 20px;
+}
+
+/*//////////////////////// IMPORT AND CREATE FLASHCARD CSS END ////////////////////////////////*/
+
+
+/*//////////////////////// FLASHCARDS CSS START ///////////////////////////////////////////////*/
+
+#subjects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 150px;
+}
+
+.subjects{
+  border: none;
+  border-radius: 20px;
+  margin-top: -110px ;
+  font-size: 25px;
+  text-align: center;
+  width: 35%;
+  padding: 10px 10px;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.2);
+}
+
+#sub1{
+  background-color: #FFB72B;
+  margin-bottom: 140px;
+  margin-right: 10px;
+}
+#sub2{
+background-color: #B9F3FC;
+margin-bottom: 140px;
+}
+
+#sub3{
+  background-color: #F25A04;
+  margin-right: 10px;
+  
+}
+#sub4{
+  background-color: #7743DB;
+}
+.ptitle{
+  text-align: center;
+}
+p{
+  font-size: 20px;
+  text-align: justify;
+}
+h3{
+ margin-bottom: -110px;
+}
+/*//////////////////////// FLASHCARDS CSS END ///////////////////////////////////////////////*/
+
+
+/*//////////////////////// MEDIA QUERIES CSS START //////////////////////////////*/
+/* Media query to show the hamburger menu on small screens */
 @media screen and (max-width: 995px) {
   /* Hide regular navbar links */
   .navbar a {
@@ -176,80 +261,4 @@ color: black;
 
 
 }
- 
-.container3{
-    border: none solid ;
-    padding: 30px 150px;
-    justify-content: center;
-    max-width: 600px;
-    max-height: 500px;
-    border-radius: 20px;
-    box-shadow: rgba(15, 19, 66, 0.4) 0px 2px 4px, rgba(8, 56, 17, 0.3) 0px 7px 13px -3px, #370b0b33 0px -3px 0px inset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    margin-right: 10px;
-    
-    overflow: hidden;
-    
-} 
-h4{
-    font-size: 20px;
-    padding-top: 50px;
-    text-align: center;
-    margin-top: -70px;
-    margin-bottom: 10px;
-}
-textarea{
-    border-radius: 10px;
-}
-
-/* #import{
-    border-radius: 10px;
-    max-width: fit-content;
-    margin-left: 20px;
-} */
-
-.box{
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-}
-@media screen and (max-width: 500px) {
-  .box{
-    margin-top: 50px;
-  }
-}
-.container2{
-  margin-left: 10px;
-  display: flex;
-  flex-direction: column;
-  
-}
-/* input{
-  justify-self: flex-start;
-  margin-left: 20px;
-} */
-
-input {
-    border-radius: 5px;
-    border:0;
-    outline:0;}
-input:focus {
-  outline:none!important;
-}
-button{
-    border-radius: 10px;
-    padding: 2px 5px;
-}
-
-#import{
-  margin-right: -200px;
-}
-form label{
-  margin-bottom: 10px;
-}
-#question{
-  margin-top: 10px;
-}
+/*//////////////////////// MEDIA QUERIES CSS END //////////////////////////////*/
