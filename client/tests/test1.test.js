@@ -1,4 +1,4 @@
-const {fetchCard, replaceContent, updateProgress, switchColor, flipCard} = require('./test1.js')
+const {fetchCard, replaceContent, updateProgress, switchColor, flipCard, nextButton, previousButton} = require('./test1.js')
 global.fetch = require('jest-fetch-mock')
 
 const fs = require("fs");
@@ -155,7 +155,6 @@ describe("Test if the switch color button changes the color of the HTML body", (
     })
 
     test("Does the switch color button change the color of the body and flashcard", () => {
-        const switchColorBtn = document.querySelector("#switch-color")
         const body = document.querySelector("body")
         const flashcard = document.querySelector(".flashcard")
         let bodyColor = body.style.backgroundColor
@@ -178,15 +177,33 @@ describe("Does the flipcard and displaying the score work?", () => {
         flipCard();
         expect(card.classList.contains('flip')).toBe(true);
     })
-
-    
-    // test("test if the score is increased", () => {
-    //     flipCard()
-    //     expect(scoreboard).toBe(1);
-    // })
-    
-    // test("test if the corAnswer div has the text", () => {
-    //     flipCard()
-    //     expect(corAnswer.textContent).toBe("Congratulations you scored: 5 out of 5");
-    // })
 })
+
+
+// Need to test functionality still!
+describe("Test if the next button is working", () => {
+
+    test("Does the next button exist on both front and back of the flashcard", () => {
+        const nextButtonBack = document.getElementById("next-button-back")
+        const nextButton = document.getElementById("next-button-front")
+        expect(nextButtonBack).not.toBe(null)
+        expect(nextButton).not.toBe(null)
+    })
+})
+
+
+// Need to test functionality still!
+describe("Test if the previous button is working", () => {
+
+    test("Does the previous button exist on both front and back of the flashcard", () => {
+        const previousButton = document.getElementById("previous-button-front")
+        const previousButtonBack = document.getElementById("previous-button-back")
+        expect(previousButtonBack).not.toBe(null)
+        expect(previousButton).not.toBe(null)
+    })
+
+})
+
+
+
+

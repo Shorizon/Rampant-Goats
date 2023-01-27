@@ -58,7 +58,7 @@ app.post("/flashcard", (req, res) => {
     const newFlashcard = req.body;
     const missingField = ["content", "answer1", "answer2", "answer3", "answer4", "corAnswer", "category", "corIndex"].some(fc => !Object.hasOwn(newFlashcard, fc));
 
-    if (missingField || (typeof newFlashcard.corIndex != "number")) {
+    if (missingField ){
         res.status(400).json({
             "error": "your flashcard is missing something!"
         })

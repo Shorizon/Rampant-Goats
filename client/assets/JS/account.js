@@ -19,7 +19,7 @@ async function login(event) {
     if (currentUser) {
         alert(`logged in as : ${user}`)
         sessionStorage.setItem("user", user)
-        window.location.replace("../Front-page/landing-page.html")
+        window.location.replace("../HTML/landing-page.html")
     }
 
 }
@@ -46,7 +46,7 @@ async function signUp(event) {
           }
     
           const response = await fetch(`http://localhost:3000/flashcard/signup`, options)
-          console.log("sent req")
+          
           if (response.status == 201) {
             console.log("received")
           }

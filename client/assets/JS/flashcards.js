@@ -1,5 +1,4 @@
 
-
 //////// View flashcards in categories START /////////////
 let next = 0;
 let fLength, sub, counterQ, correct = undefined;
