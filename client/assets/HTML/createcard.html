@@ -11,61 +11,78 @@
 </head>
 
 <body>
+  <section class = "header">
+  <img id="title-img" src="../images/logo.png"></img>
+  <!-- Navbar section start -->
+  <nav class="navbar">
+      <div class="navbar-items">
+          <a href="./landing-page-1.html">Home</a>
+          <a href="./subjects.html">Subjects</a>
+          <a id="switch-color">Switch Color</a>
+          <a href="./help.html">Help</a>
+          <a href="./account.html">Account</a>
+      </div>
+  </nav>
+  <!-- Navbar section end -->
 
-    <div>
-        <img id="logo-img" src="../images/logo.png" alt="A logo of Rampant Goats."></div>
-        
-        <div id="menu">
-            <ul>
-                <li><a href="../HTML/help.html">Help</a></li>
-                <li><a href="../HTML/account.html">Account</a></li>
-                <li><a href="../HTML/subjects.html">Subjects</a></li>
-                <li><a href="../HTML/landing-page.html">Home</a></li>
-            </ul></div>
-    </div>
-    <div class="container">
+  <!-- Hamburger menu start -->
+  <div class="container">
+      <div class="hamburger-menu">
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+      </div>
+      <!-- Hamburger menu end -->
 
-    <div class="container1">
-     
-        <h2>Create New Flashcard</h2><br><br>
-        <label for="text"><b>Question</b></label><br><br>
-        <div id=" "><textarea name="" id="question" cols="18" rows="1" placeholder="Enter Question"
-            required></textarea></div> <br>
-        <Label for="text">
-          <p>Answer 1</p>
-        </Label>
-        <input type="text" id="ans1" placeholder="1st Answer" name="text" required><br>
-        <label for="text">
-          <p>Answer 2</p>
-        </label>
-        <input type="text" id="ans2" placeholder="2nd Answer" name="text" required><br><br>
-        <label for="text">
-          <p>Answer 3</p>
-        </label>
-        <input type="text" id="ans3" placeholder="3rd Answer" name="text" required><br><br>
-        <label for="text">
-          <p>Answer 4</p>
-        </label>
-        <input type="text" id="ans4" placeholder="4th Answer" name="text" required><br><br>
-        <label for="text">
-          <p>Correct Answer</p>
-        </label>
-        <input type="text" id="cat" placeholder="Category" name="text" required><br><br>
-        <label for="text">
-          <p>Category</p>
-        </label>
-        <input type="text" id="cor" placeholder="Correct Answer" name="text" required><br><br>
-        <label for="text">
-          <p>Index of Correct Answer</p>
-        </label>
-        <input type="text" id="indCor" placeholder="corIndex" name="text" required><br><br>
-
-
-        <button id="create">Create Flashcard</button><br><br>
-
-    
+      <!-- Sidebar start -->
+      <section class="sidebar">
+          <ul class="menu">
+              <li class="menu-item">
+                  <a href="./landing-page-1.html">Home</a>
+              </li><br>
+              <li class="menu-item">
+                  <a href="./subjects.html">Subjects</a>
+              </li><br>
+              <li class="menu-item">
+                  <a id="switch-color">Color</a>
+              </li><br>
+              <li class="menu-item">
+                  <a href="./help.html">Help</a>
+              </li><br>
+              <li class="menu-item">
+                  <a href="./account.html">Account</a>
+              </li>
+          </ul>
+      </section>
+  </div> 
+</section>
+  <div class = "box">
+    <div class="container3">
+      
+    <div class="container2">
+        <form action="text">
+            <h2>Create New Flashcard</h2><br>
+            <label for="text"><b>Question</b></label><br>
+             <div id="question"><textarea name="" id="" cols="18" rows="1" placeholder="Enter Question" required></textarea></div> 
+            <Label for="text"><p>Answer 1</p></Label>
+              <input type="text" placeholder="1st Answer" name="text" required><br>
+            <label for="text"><p>Answer 2</p></label>
+              <input type="text" placeholder="2nd Answer" name="text" required><br>
+            <label for="text"><p>Answer 3</p></label>
+              <input type="text" placeholder="3rd Answer" name="text" required><br>
+            <label for="text"><p>Answer 4</p></label>
+              <input type="text" placeholder="4th Answer" name="text" required><br><br><br>
+            
+            <button>Create Flashcard</button><br><br>
+         
+        <!-- <div class="container2" id="import"><h4>Import</h4>
+            <input type="file" id="selectFiles" value="Import"/><br><br>
+            <textarea name="" id="" cols="18" rows="1" placeholder="Optional description"></textarea><br><br>
+          <button id="import">Import</button>
+        </div> -->
+        </form> 
+      </div>
     </div>
   </div>
 </body>
-
 </html>
