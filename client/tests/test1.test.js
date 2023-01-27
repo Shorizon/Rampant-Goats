@@ -155,7 +155,6 @@ describe("Test if the switch color button changes the color of the HTML body", (
     })
 
     test("Does the switch color button change the color of the body and flashcard", () => {
-        const switchColorBtn = document.querySelector("#switch-color")
         const body = document.querySelector("body")
         const flashcard = document.querySelector(".flashcard")
         let bodyColor = body.style.backgroundColor
