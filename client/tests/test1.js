@@ -52,13 +52,44 @@ function switchColor() {
 }
 
 
+function flipCard() {
+  let fLength = flashcard.length;
+  const card = document.getElementById("flashcard")
+  card.classList.toggle("flip")
+  let radiobuttons = document.getElementsByName("answer")
+  let i = 0;
+  radiobuttons.forEach((e) => {
+    if (e.checked) {
+      if (i == correct) {
+        scoreboard++;
+      }
+      e.checked = false;
+    }
+    i++;
+  })
+
+  if (3 == fLength){
+    let br = document.createElement("br")
+    let span = document.createElement("span")
+    span.style.fontWeight = ("bold")
+    let textnode = document.createTextNode("Congratulations you scored: 5 out of 5");
+    corAnswer.appendChild(br)
+    corAnswer.appendChild(br)
+    span.appendChild(textnode)
+    corAnswer.appendChild(span)
+    
+  }
+}
+
+
 
     if (typeof exports !== 'undefined') {
         module.exports = {
             fetchCard,
             replaceContent,
             updateProgress,
-            switchColor
+            switchColor,
+            flipCard
         };
     }
 
