@@ -15,8 +15,8 @@ const body = document.querySelector("body")
 const flashcard = document.querySelector(".flashcard")
 
 
-let bodyColors = ["#0081C9", "white", "#58B09C"];
-let flashcardColors = ["#FFC93C", "purple", "#58B09C"];
+let bodyColors = ["#0081C9", "white", "#58B09C", "#5FD068"];
+let flashcardColors = ["#FFC93C", "purple", "#58B09C", "white"];
 let bodyColorIndex = 0;
 let flashcardColorIndex = 0;
 
