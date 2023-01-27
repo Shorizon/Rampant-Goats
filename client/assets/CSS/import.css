@@ -1,3 +1,144 @@
+<<<<<<< HEAD:client/Front-page/import.css
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  font-family: Nunito, sans-serif;
+  background-color: #58B09C;
+}
+/*//////////////////////// NAVBAR CSS START //////////////////////////////*
+/* navbar container */
+.navbar {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+  color: #fff;
+  padding: 30px;
+  margin-left: 400px;
+}
+
+.navbar-items a {
+  margin-top: 10px;
+}
+
+/* Used to be the old title but switched to icon now */
+/* .title {
+  font-size: 35px;
+  font-weight: 900;
+  color: #fff;
+  position: absolute;
+  left: 30px;
+  text-align: left;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+} */
+
+#title-img {
+  width: calc(40% + 0.390625vw);
+  height: auto;
+    position: absolute;
+  left: 30px;
+  top: 15px;
+}
+@media screen and (max-width: 500px){
+  #title-img{
+  width: 200px;
+  left: 15px;
+  }}
+
+
+/* navbar buttons */
+a {
+  border-radius: 10px;
+  border: none;
+  font-family: Nunito, sans-serif;
+  font-weight: 650;
+  color: #000000;
+  font-size:calc(10px + 0.5vw);
+  padding: 0.6em 0.9em ;
+  background: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  margin: auto 10px auto 10px;
+}
+
+/* Navbar hover effect */
+a:hover {
+  background-color: rgb(4, 4, 4);
+  border-color: rgb(200, 200, 200);
+  color: #fff;
+}
+
+
+/*//////////////////////// NAVBAR CSS END //////////////////////////////*/
+
+
+
+/*//////////////////////// HAMBURGER CSS START //////////////////////////////*/
+
+.container {
+display: none;
+}
+
+.hamburger-menu {
+width: 2rem;
+height: 2rem;
+position: fixed;
+top: 2rem;
+right: 5rem;
+z-index: 200;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+cursor: pointer;
+}
+
+.line {
+width: 100%;
+height: 0.2rem;
+background-color: white;
+box-shadow: 0.1rem 0.2rem rgba(0,0,0,0.2);
+}
+
+.sidebar {
+width: 15rem;
+height: 100vh;
+position: fixed;
+top: 0;
+right: -40rem;
+background-color: white;
+transition: right 0.5s;
+z-index: 1;
+}
+
+.change .sidebar {
+right: 0;
+}
+
+.menu {
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+list-style: none;
+}
+
+.menu-item {
+text-align: center;
+}
+
+.menu-link {
+font-family: Nunito, sans-serif;
+font-size: 1.5rem;
+color: black;
+}
+/*//////////////////////// HAMBURGER CSS END //////////////////////////////*/
+@media screen and (max-width: 995px) {
+  /* Hide regular navbar links */
+  .navbar a {
+    display: none;
+=======
 body{
   background-color: #58B09C;
   margin: 40px 0px;
@@ -27,33 +168,44 @@ ul {
     margin-right: 88px;
     margin-top: -70px;
     margin-left: -25px;
+>>>>>>> a18a24f618bc3b9001b57e446682599924233594:client/assets/CSS/import.css
   }
-  
-  li {
-    float:right;
-    width: 10%;
-    font-size: 25px;
-    margin-bottom: 80px;
-  }
-  li a {
+
+  /* #title-img {
+    display: none;
+  } */
+
+  /* Show hamburger menu button */
+  .container {
     display: block;
-    color: #000000;
-    text-align: center;
-    padding: 10px 12px;
-    text-decoration: none;
-    max-width: 720px;
-    margin: 0 1px;
-    background-color: #D9D9D9;
-    border-radius: 10px;
   }
-  li a:hover {
-    background-color: #000000;
-    color: #58B09C;
-    border-radius: 10px;
-  }
+  @media screen and (max-width: 700px){
+    .hamburger-menu {
+   
+    top: 1.5rem;
+    right: 3rem;
+   
+}}
+@media screen and (max-width: 360px){
+  .hamburger-menu {
+ 
+  top: 1rem;
+  right: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+ 
+}}
+
+  /* Show menu on hover, commented out over preferential button click event
+  .navbar .menu-button:hover + .menu,
+  .navbar .menu-button:focus + .menu {
+    display: block;
+  } */
 
 
-.container{
+}
+ 
+.container3{
     border: none solid ;
     padding: 100px 100px;
     justify-content: center;
@@ -64,11 +216,12 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 480px;
-    margin-top: -60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
     overflow: hidden;
-    margin-bottom: -100px;
-}
+    
+} 
 h4{
     font-size: 20px;
     padding-top: 50px;
@@ -82,4 +235,22 @@ textarea{
 
 #import{
     border-radius: 10px;
+    max-width: fit-content;
+    margin-left: 20px;
+}
+
+.box{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.container2{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+input{
+  justify-self: flex-start;
+  margin-left: 20px;
 }
