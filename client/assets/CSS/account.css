@@ -17,7 +17,7 @@ body {
   justify-content: flex-end; 
   align-items: center; 
   color: #fff;
-  padding: 30px;
+  padding: 40px 30px 30px 30px;
   margin-left: 400px;
 }
 
@@ -39,7 +39,10 @@ body {
 } */
 
 #title-img {
-  width: calc(40% + 0.390625vw);
+
+  width: calc(30% + 0.390625vw);
+  max-width: 560px;
+
   height: auto;
     position: absolute;
   left: 30px;
