@@ -49,10 +49,13 @@ async function signUp(event) {
           
           if (response.status == 201) {
             console.log("received")
+            alert(`logged in as : ${user.username}`)
+            sessionStorage.setItem("user", user.username)
+            window.location.replace("../HTML/landing-page.html")
           }
 
     } else {
-        alert("please check your credential")
+        alert("please insert the same passsword twice")
     }
     
    
