@@ -1,4 +1,4 @@
-const {fetchCard, replaceContent, updateProgress, switchColor} = require('./test1.js')
+const {fetchCard, replaceContent, updateProgress, switchColor, flipCard} = require('./test1.js')
 global.fetch = require('jest-fetch-mock')
 
 const fs = require("fs");
@@ -165,3 +165,28 @@ describe("Test if the switch color button changes the color of the HTML body", (
         expect(flashcardColor).not.toBe("green")
        })
    })
+
+describe("Does the flipcard and displaying the score work?", () => {
+
+    test("Does the card exist?", () => {
+        const card = document.getElementById("flashcard")
+        expect(card).not.toBe(null)
+    })
+
+    test("Can you add the flip class to the card?", () => {
+        const card = document.getElementById("flashcard");
+        flipCard();
+        expect(card.classList.contains('flip')).toBe(true);
+    })
+
+    
+    // test("test if the score is increased", () => {
+    //     flipCard()
+    //     expect(scoreboard).toBe(1);
+    // })
+    
+    // test("test if the corAnswer div has the text", () => {
+    //     flipCard()
+    //     expect(corAnswer.textContent).toBe("Congratulations you scored: 5 out of 5");
+    // })
+})
