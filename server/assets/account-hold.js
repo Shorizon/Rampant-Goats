@@ -1,16 +1,16 @@
 const users = [{
 
-     username : "admin@futureproof",
+     username : "admin2",
      password : "password"
   
     },{
 
-     username : "admin2@futureproof",
+     username : "admin",
      password : "password"
   
     },{
 
-     username : "admin3@futureproof",
+     username : "admin3",
      password : "password"
   
     },{
