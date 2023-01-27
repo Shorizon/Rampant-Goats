@@ -56,30 +56,52 @@ function flipCard() {
   let fLength = flashcard.length;
   const card = document.getElementById("flashcard")
   card.classList.toggle("flip")
-  let radiobuttons = document.getElementsByName("answer")
-  let i = 0;
-  radiobuttons.forEach((e) => {
-    if (e.checked) {
-      if (i == correct) {
-        scoreboard++;
-      }
-      e.checked = false;
-    }
-    i++;
-  })
-
-  if (3 == fLength){
-    let br = document.createElement("br")
-    let span = document.createElement("span")
-    span.style.fontWeight = ("bold")
-    let textnode = document.createTextNode("Congratulations you scored: 5 out of 5");
-    corAnswer.appendChild(br)
-    corAnswer.appendChild(br)
-    span.appendChild(textnode)
-    corAnswer.appendChild(span)
-    
-  }
 }
+
+
+function nextButton() {
+const nextButtonBack = document.getElementById("next-button-back")
+const nextButton = document.getElementById("next-button-front")
+let savedNext = nextButton.style;
+let savedNextBack = nextButtonBack.style;
+let next = 0
+let fLength = 5
+
+nextButton.addEventListener('click', nextCard)
+nextButtonBack.addEventListener('click', function () { flipCard(); nextCard() })
+function nextCard() {
+  if (next < fLength - 1) {
+    displayFlashcard((next = next + 1), cat)
+  }
+  else {
+    alert("there are no more flashcards left!!!")
+  }
+ };
+}
+
+function previousButton() {
+  const nextButtonBack = document.getElementById("next-button-back")
+  const nextButton = document.getElementById("next-button-front")
+  let savedNext = nextButton.style;
+  let savedNextBack = nextButtonBack.style;
+  let next = 0
+  let fLength = 5
+  
+  nextButton.addEventListener('click', nextCard)
+  nextButtonBack.addEventListener('click', function () { flipCard(); nextCard() })
+  function nextCard() {
+    if (next < fLength - 1) {
+      displayFlashcard((next = next + 1), cat)
+    }
+    else {
+      alert("there are no more flashcards left!!!")
+    }
+   };
+  }
+
+
+
+
 
 
 
@@ -89,7 +111,9 @@ function flipCard() {
             replaceContent,
             updateProgress,
             switchColor,
-            flipCard
+            flipCard,
+            nextButton,
+            previousButton
         };
     }
 
