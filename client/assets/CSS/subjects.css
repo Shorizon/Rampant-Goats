@@ -39,6 +39,7 @@ body {
 
 #title-img {
   width: calc(30% + 0.390625vw);
+  max-width: 560px;
   height: auto;
   position: absolute;
   left: 30px;
