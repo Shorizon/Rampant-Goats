@@ -8,7 +8,7 @@ body {
 }
 .header{
   min-height: 120px;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid; */
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -180,8 +180,9 @@ color: black;
 
 }
 .container1{
-  margin-left: 40px;
+  margin-left: 100px;
   margin-right: 20px;
+  margin-top: 80px;
  }
  /*
 ul {
